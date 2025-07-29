@@ -29,7 +29,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 md:top-0 bottom-0 md:bottom-auto left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b md:border-b border-t md:border-t-0 border-border"
+      className="fixed md:top-0 bottom-0 md:bottom-auto left-0 right-0 z-50 bg-background/80 backdrop-blur-md md:border-b border-t md:border-t-0 border-border"
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
