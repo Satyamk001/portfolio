@@ -1,0 +1,259 @@
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
+
+const projects = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product catalog, shopping cart, and payment processing.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Task Management App",
+    description: "A collaborative task management application with real-time updates, team collaboration features, and advanced project tracking capabilities.",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+    technologies: ["React", "Firebase", "TypeScript", "Material-UI"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: true
+  },
+  {
+    id: 3,
+    title: "Weather Dashboard",
+    description: "A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics using modern web APIs.",
+    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+    technologies: ["Vue.js", "OpenWeather API", "Chart.js", "PWA"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false
+  },
+  {
+    id: 4,
+    title: "Social Media Analytics",
+    description: "An analytics dashboard for social media managers with data visualization, automated reporting, and performance tracking across platforms.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    technologies: ["React", "D3.js", "Python", "PostgreSQL", "AWS"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false
+  },
+  {
+    id: 5,
+    title: "Blockchain Voting System",
+    description: "A secure, transparent voting system built on blockchain technology with smart contracts and a user-friendly web interface.",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop",
+    technologies: ["Solidity", "Web3.js", "React", "Ethereum", "IPFS"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: true
+  },
+  {
+    id: 6,
+    title: "AI Chat Assistant",
+    description: "An intelligent chat assistant powered by machine learning with natural language processing and contextual conversation capabilities.",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop",
+    technologies: ["Python", "TensorFlow", "React", "WebSocket", "Docker"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false
+  }
+];
+
+export const PortfolioSection = () => {
+  const featuredProjects = projects.filter(project => project.featured);
+  const otherProjects = projects.filter(project => !project.featured);
+
+  return (
+    <section id="portfolio" className="py-20">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">My Portfolio</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Here are some of my recent projects that showcase my skills and expertise 
+            in full-stack development, from concept to deployment.
+          </p>
+        </motion.div>
+
+        {/* Featured Projects */}
+        <div className="mb-16">
+          <motion.h3
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-2xl font-semibold mb-8 flex items-center"
+          >
+            <span className="w-2 h-8 bg-gradient-primary rounded-full mr-3"></span>
+            Featured Projects
+          </motion.h3>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            {featuredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group"
+              >
+                <Card className="overflow-hidden shadow-card hover:shadow-elegant transition-all duration-500 border-primary/10">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="flex space-x-4">
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Live Demo
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h4>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Other Projects */}
+        <div>
+          <motion.h3
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-2xl font-semibold mb-8 flex items-center"
+          >
+            <span className="w-2 h-8 bg-gradient-to-b from-accent to-primary rounded-full mr-3"></span>
+            Other Projects
+          </motion.h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <Card className="overflow-hidden shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 group">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-60 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="flex space-x-2">
+                        <Button size="sm" variant="secondary" className="opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                          <ExternalLink className="w-3 h-3" />
+                        </Button>
+                        <Button size="sm" variant="secondary" className="opacity-0 group-hover:opacity-100 transition-opacity delay-150">
+                          <Github className="w-3 h-3" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h4>
+                    <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <Badge variant="outline" className="text-xs">
+                          +{project.technologies.length - 3}
+                        </Badge>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <p className="text-muted-foreground mb-6">
+            Interested in seeing more of my work or discussing a project?
+          </p>
+          <Button
+            size="lg"
+            className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-elegant"
+          >
+            <Github className="w-4 h-4 mr-2" />
+            View All Projects on GitHub
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
