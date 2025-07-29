@@ -29,19 +29,41 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      className="fixed top-0 md:top-0 bottom-0 md:bottom-auto left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b md:border-b border-t md:border-t-0 border-border"
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Hidden on mobile */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
+            className="hidden md:block text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
           >
             Portfolio
           </motion.div>
 
           {/* Navigation Items */}
+          <div className="flex md:hidden items-center justify-center space-x-1 w-full">
+            {navItems.map((item) => (
+              <Button
+                key={item.id}
+                variant={activeSection === item.id ? "default" : "ghost"}
+                onClick={() => scrollToSection(item.id)}
+                className="relative text-xs px-2 py-1"
+                size="sm"
+              >
+                {item.label}
+                {activeSection === item.id && (
+                  <motion.div
+                    layoutId="activeTabMobile"
+                    className="absolute inset-0 bg-primary rounded-md -z-10"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+              </Button>
+            ))}
+          </div>
+
+          {/* Desktop Navigation Items */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Button
@@ -62,8 +84,8 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
             ))}
           </div>
 
-          {/* Theme Toggle & CTA */}
-          <div className="flex items-center space-x-4">
+          {/* Theme Toggle & CTA - Desktop only */}
+          <div className="hidden md:flex items-center space-x-4">
             <Button
               variant="ghost"
               size="icon"

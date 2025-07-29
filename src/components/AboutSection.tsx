@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Smartphone, Database, Cloud } from "lucide-react";
+import { ResumeButton } from "@/components/ResumeViewer";
 
 const skills = [
   {
@@ -45,11 +46,15 @@ export const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
             I'm a passionate full-stack developer with a love for creating digital experiences 
             that make a difference. With expertise in modern web technologies and a keen eye for design, 
             I bring ideas to life through clean, efficient code.
           </p>
+          
+          <div className="flex justify-center">
+            <ResumeButton />
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">

@@ -39,11 +39,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <HeroSection scrollToSection={scrollToSection} />
-      <AboutSection />
-      <PortfolioSection />
-      <ContactSection />
-      <Footer />
+      <div className="pb-16 md:pb-0">
+        <HeroSection scrollToSection={scrollToSection} />
+        <AboutSection />
+        <PortfolioSection />
+        <ContactSection />
+        <Footer />
+      </div>
     </div>
   );
 };
