@@ -52,7 +52,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           >
             Hi, I'm{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Alex Developer
+              Satyam Kumar
             </span>
           </motion.h1>
 
@@ -143,7 +143,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           >
             <img
               src={profileImage}
-              alt="Alex Developer"
+              alt="Satyam Kumar"
               className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl object-cover shadow-elegant border-2 border-primary/20"
             />
             

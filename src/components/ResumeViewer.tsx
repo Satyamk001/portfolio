@@ -14,7 +14,7 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
     // Create a sample resume download - in real app, this would be your actual resume file
     const link = document.createElement('a');
     link.href = '/placeholder.svg'; // Replace with actual resume PDF path
-    link.download = 'John_Doe_Resume.pdf';
+    link.download = 'Satyam_Resume.pdf';
     link.click();
   };
 

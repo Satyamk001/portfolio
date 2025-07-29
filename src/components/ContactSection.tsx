@@ -12,19 +12,19 @@ const contactInfo = [
   {
     icon: <Mail className="w-6 h-6" />,
     title: "Email",
-    content: "alex@developer.com",
-    action: "mailto:alex@developer.com"
+    content: "satyamkmr37@gmail.com",
+    action: "mailto:satyamkmr37@gmail.com"
   },
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Phone",
-    content: "+1 (555) 123-4567",
-    action: "tel:+15551234567"
+    content: "+91 95829 06377",
+    action: "tel:+91 9582906377"
   },
   {
     icon: <MapPin className="w-6 h-6" />,
     title: "Location",
-    content: "San Francisco, CA",
+    content: "New Delhi, India",
     action: "#"
   }
 ];

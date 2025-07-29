@@ -6,7 +6,7 @@ const socialLinks = [
   { icon: <Github className="w-5 h-5" />, href: "#", label: "GitHub" },
   { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
   { icon: <Twitter className="w-5 h-5" />, href: "#", label: "Twitter" },
-  { icon: <Mail className="w-5 h-5" />, href: "mailto:alex@developer.com", label: "Email" },
+  { icon: <Mail className="w-5 h-5" />, href: "mailto:satyamkmr37@developer.com", label: "Email" },
 ];
 
 const quickLinks = [
@@ -32,7 +32,7 @@ export const Footer = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Alex Developer
+              Satyam Kumar
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               Full-stack developer passionate about creating digital experiences 
@@ -101,7 +101,7 @@ export const Footer = () => {
           >
             <h4 className="font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-3 text-muted-foreground">
-              <p>📧 alex@developer.com</p>
+              <p>📧 satyamkmr37@developer.com</p>
               <p>📱 +1 (555) 123-4567</p>
               <p>📍 San Francisco, CA</p>
             </div>
@@ -122,7 +122,7 @@ export const Footer = () => {
           className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         >
           <p className="text-muted-foreground text-sm flex items-center">
-            © {currentYear} Alex Developer. Made with{" "}
+            © {currentYear} Satyam Kumar. Made with{" "}
             <Heart className="w-4 h-4 mx-1 text-red-500 animate-pulse" />{" "}
             and lots of ☕
           </p>
