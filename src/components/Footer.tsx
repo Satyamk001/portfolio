@@ -101,9 +101,9 @@ export const Footer = () => {
           >
             <h4 className="font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-3 text-muted-foreground">
-              <p>📧 satyamkmr37@developer.com</p>
-              <p>📱 +1 (555) 123-4567</p>
-              <p>📍 San Francisco, CA</p>
+              <p>📧 satyamkmr37@gmail.com</p>
+              <p>📱 +91 95829 06377</p>
+              <p>📍 New Delhi, India</p>
             </div>
             <div className="mt-4 p-4 bg-gradient-secondary rounded-lg border border-primary/20">
               <p className="text-sm">
