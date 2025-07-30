@@ -9,9 +9,8 @@ interface HeroSectionProps {
 
 export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
   const handleDownload = () => {
-    // Create a sample resume download - in real app, this would be your actual resume file
     const link = document.createElement('a');
-    link.href = '../../src/assets/satyam_july_res.pdf'; // Replace with actual resume PDF path
+    link.href = '../../src/assets/satyam_july_res.pdf';
     link.download = 'Satyam_Resume.pdf';
     link.click();
   };
@@ -100,6 +99,12 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/Satyam_Resume.pdf';
+                link.download = 'Satyam_Resume.pdf';
+                link.click();
+              }}
             >
               <Download className="w-4 h-4 mr-2" />
               Download CV

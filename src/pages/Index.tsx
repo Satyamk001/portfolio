@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
@@ -11,7 +12,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "portfolio", "contact"];
+      const sections = ["home", "about", "experience", "portfolio", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -42,6 +43,7 @@ const Index = () => {
       <div className="pb-16 md:pb-0">
         <HeroSection scrollToSection={scrollToSection} />
         <AboutSection />
+        <ExperienceSection />
         <PortfolioSection />
         <ContactSection />
         <Footer />
