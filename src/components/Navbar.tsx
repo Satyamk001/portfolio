@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Home, User, Briefcase, Mail, MessageCircle } from "lucide-react";
+import { Moon, Sun, Home, User, Briefcase, Mail, MessageCircle, FolderOpen, Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useState } from "react";
 
 interface NavbarProps {
   activeSection: string;
@@ -10,19 +11,21 @@ interface NavbarProps {
 
 const navItems = [
   { id: "home", label: "Home", icon: Home },
-  { id: "about", label: "About Me", icon: User },
+  { id: "about", label: "About", icon: User },
   { id: "experience", label: "Experience", icon: Briefcase },
-  { id: "portfolio", label: "Portfolio", icon: Briefcase },
+  { id: "portfolio", label: "Portfolio", icon: FolderOpen },
   { id: "contact", label: "Contact", icon: Mail },
 ];
 
 export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
   const { theme, setTheme } = useTheme();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -32,26 +35,27 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="hidden md:block fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+        className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
       >
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 lg:px-6 py-3 lg:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
+              className="text-xl lg:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent cursor-pointer"
+              onClick={() => scrollToSection("home")}
             >
-              Portfolio
+              Satyam
             </motion.div>
 
             {/* Desktop Navigation Items - Pill Style */}
-            <div className="flex items-center space-x-2 bg-secondary/50 backdrop-blur-sm rounded-full p-1 border border-border/50">
+            <div className="hidden xl:flex items-center space-x-2 bg-secondary/50 backdrop-blur-sm rounded-full p-1 border border-border/50">
               {navItems.map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-6 py-2 rounded-full transition-all duration-300 ${
+                  className={`relative px-4 xl:px-6 py-2 rounded-full transition-all duration-300 text-sm ${
                     activeSection === item.id
                       ? "bg-background text-foreground shadow-md"
                       : "hover:bg-background/50"
@@ -63,35 +67,108 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
             </div>
 
             {/* Theme Toggle & CTA */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              {/* Mobile Menu Button for tablet */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="rounded-full xl:hidden"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
+              </Button>
+
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="rounded-full"
               >
-                <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <Sun className="h-4 w-4 lg:h-5 lg:w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-4 w-4 lg:h-5 lg:w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               </Button>
               
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-gradient-primary hover:opacity-90 transition-opacity rounded-full px-6"
+                className="bg-gradient-primary hover:opacity-90 transition-opacity rounded-full px-3 lg:px-6 text-sm"
+                size="sm"
               >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Let's Talk
+                <MessageCircle className="w-4 h-4 lg:mr-2" />
+                <span className="hidden lg:inline">Let's Talk</span>
               </Button>
             </div>
           </div>
         </div>
       </motion.nav>
 
+      {/* Mobile Menu Overlay for Tablet */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg lg:hidden xl:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ delay: 0.1 }}
+            className="flex flex-col items-center justify-center h-full space-y-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {navItems.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`flex items-center space-x-3 text-lg font-medium transition-colors ${
+                    activeSection === item.id
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Icon className="w-5 h-5" />
+                  <span>{item.label}</span>
+                </motion.button>
+              );
+            })}
+            
+            {/* Mobile CTA */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: navItems.length * 0.1 }}
+            >
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-md"
+                size="lg"
+              >
+                Let's Talk
+              </Button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
+
       {/* Mobile Bottom Navigation */}
       <motion.nav
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-border"
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-border"
       >
         <div className="flex items-center justify-around px-4 py-3">
           {navItems.map((item) => {

@@ -12,11 +12,7 @@ interface ResumeViewerProps {
 export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
   const handleDownload = () => {
     const link = document.createElement('a');
-<<<<<<< HEAD
-    link.href = 'https://drive.google.com/file/d/1LcuVaVX-qjkDLM0Tw-QmKxOiTzOUVNgc/view?usp=sharing'; // Replace with actual resume PDF path
-=======
     link.href = '/Satyam_Resume.pdf';
->>>>>>> 875f70f65de414ecfdedbad037c7ade98ea2eca7
     link.download = 'Satyam_Resume.pdf';
     link.click();
   };
