@@ -13,14 +13,14 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
   const handleDownload = () => {
     // Create a sample resume download - in real app, this would be your actual resume file
     const link = document.createElement('a');
-    link.href = '/placeholder.svg'; // Replace with actual resume PDF path
+    link.href = 'https://drive.google.com/file/d/1LcuVaVX-qjkDLM0Tw-QmKxOiTzOUVNgc/view?usp=sharing'; // Replace with actual resume PDF path
     link.download = 'Satyam_Resume.pdf';
     link.click();
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-scroll">
         <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
           <DialogTitle className="text-2xl font-bold">My Resume</DialogTitle>
           <div className="flex items-center space-x-2">

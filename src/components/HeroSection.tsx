@@ -8,6 +8,13 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
+  const handleDownload = () => {
+    // Create a sample resume download - in real app, this would be your actual resume file
+    const link = document.createElement('a');
+    link.href = '../../src/assets/satyam_july_res.pdf'; // Replace with actual resume PDF path
+    link.download = 'Satyam_Resume.pdf';
+    link.click();
+  };
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Gradient */}
@@ -89,7 +96,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               My Works
             </Button>
             
-            <Button
+            <Button onClick={handleDownload}
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
