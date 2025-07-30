@@ -11,9 +11,8 @@ interface ResumeViewerProps {
 
 export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
   const handleDownload = () => {
-    // Create a sample resume download - in real app, this would be your actual resume file
     const link = document.createElement('a');
-    link.href = '/placeholder.svg'; // Replace with actual resume PDF path
+    link.href = '/Satyam_Resume.pdf';
     link.download = 'Satyam_Resume.pdf';
     link.click();
   };
@@ -47,13 +46,12 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
           <div className="bg-white text-black p-8 rounded-lg shadow-inner min-h-[800px]">
             <div className="max-w-3xl mx-auto">
               <header className="text-center mb-8">
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">John Doe</h1>
+                <h1 className="text-4xl font-bold text-gray-900 mb-2">Satyam Kumar</h1>
                 <p className="text-xl text-gray-600 mb-4">Full Stack Developer</p>
                 <div className="flex justify-center space-x-6 text-sm text-gray-600">
-                  <span>john@example.com</span>
-                  <span>+1 (555) 123-4567</span>
-                  <span>linkedin.com/in/johndoe</span>
-                  <span>github.com/johndoe</span>
+                  <span>satyamkumar37@gmail.com</span>
+                  <span>9582406377</span>
+                  <span>LinkedIn Profile</span>
                 </div>
               </header>
 
@@ -61,22 +59,23 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-200 pb-2">Experience</h2>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900">Senior Full Stack Developer</h3>
-                    <p className="text-gray-600 mb-2">Tech Solutions Inc. | 2022 - Present</p>
+                    <h3 className="text-xl font-semibold text-gray-900">Full Stack Developer Intern</h3>
+                    <p className="text-gray-600 mb-2">Comely Enterprises Pvt. Ltd. | Jan 2025 - May 2025</p>
                     <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Led development of scalable web applications using React, Node.js, and PostgreSQL</li>
-                      <li>Improved application performance by 40% through code optimization and caching strategies</li>
-                      <li>Mentored junior developers and conducted code reviews</li>
+                      <li>Built and maintained scalable cross-platform applications using Angular, AngularJS, React Native, Express.js, and MySQL</li>
+                      <li>Contributing to a 25% increase in development efficiency through modular code practices</li>
+                      <li>Engineered and deployed secure RESTful APIs with Express.js and Node.js, reducing response time by 30%</li>
+                      <li>Drove performance optimization efforts on both frontend and backend, leading to a 40% improvement in page load speed</li>
                     </ul>
                   </div>
                   
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900">Frontend Developer</h3>
-                    <p className="text-gray-600 mb-2">Digital Agency | 2020 - 2022</p>
+                    <h3 className="text-xl font-semibold text-gray-900">Backend Developer Intern</h3>
+                    <p className="text-gray-600 mb-2">Digital Xperts | June 2025 - June 2025</p>
                     <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Developed responsive web applications using React and TypeScript</li>
-                      <li>Collaborated with design team to implement pixel-perfect UI/UX</li>
-                      <li>Integrated RESTful APIs and managed state with Redux</li>
+                      <li>Developed and integrated an email warm-up feature using Node.js, MongoDB, NodeMailer transporter and cron scheduler</li>
+                      <li>Implemented custom cron jobs to control email sending, volume controls and various management rules</li>
+                      <li>Refactored and cleaned existing backend APIs for scalability, error handling, and maintainability</li>
                     </ul>
                   </div>
                 </div>
@@ -86,30 +85,33 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-200 pb-2">Skills</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Frontend</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Languages</h4>
                     <ul className="text-gray-700 text-sm space-y-1">
-                      <li>React.js</li>
+                      <li>C++</li>
+                      <li>SQL</li>
+                      <li>JavaScript</li>
                       <li>TypeScript</li>
-                      <li>Tailwind CSS</li>
-                      <li>Next.js</li>
+                      <li>HTML/CSS</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Backend</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">Frameworks/Libraries</h4>
                     <ul className="text-gray-700 text-sm space-y-1">
-                      <li>Node.js</li>
+                      <li>Angular</li>
+                      <li>AngularJS</li>
                       <li>Express.js</li>
-                      <li>PostgreSQL</li>
-                      <li>MongoDB</li>
+                      <li>Git</li>
+                      <li>VS Code</li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Tools</h4>
                     <ul className="text-gray-700 text-sm space-y-1">
-                      <li>Git</li>
-                      <li>Docker</li>
-                      <li>AWS</li>
-                      <li>Vercel</li>
+                      <li>Visual Studio</li>
+                      <li>Firebase</li>
+                      <li>MySQL</li>
+                      <li>Node.js</li>
+                      <li>React Native</li>
                     </ul>
                   </div>
                 </div>
@@ -118,8 +120,9 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-200 pb-2">Education</h2>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">Bachelor of Science in Computer Science</h3>
-                  <p className="text-gray-600">University of Technology | 2016 - 2020</p>
+                  <h3 className="text-xl font-semibold text-gray-900">BTech in Electronics and Communication Engineering</h3>
+                  <p className="text-gray-600">Maharaja Surajmal Institute of Technology, Delhi | Dec 2021 - May 2025</p>
+                  <p className="text-gray-600">CGPA: 7.9</p>
                 </div>
               </section>
             </div>

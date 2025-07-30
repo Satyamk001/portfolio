@@ -8,30 +8,25 @@ const skills = [
   {
     category: "Frontend",
     icon: <Code className="w-6 h-6" />,
-    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"]
+    technologies: ["React", "Angular", "AngularJS", "HTML/CSS", "JavaScript"]
   },
   {
     category: "Backend",
     icon: <Database className="w-6 h-6" />,
-    technologies: ["Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"]
+    technologies: ["Node.js", "Express.js", "MongoDB", "MySQL", "RESTful APIs"]
   },
   {
     category: "Mobile",
     icon: <Smartphone className="w-6 h-6" />,
-    technologies: ["React Native", "Flutter", "iOS", "Android", "PWA"]
-  },
-  {
-    category: "Cloud & DevOps",
-    icon: <Cloud className="w-6 h-6" />,
-    technologies: ["AWS", "Docker", "CI/CD", "Vercel", "Firebase"]
+    technologies: ["React Native", "Cross-platform", "iOS", "Android", "Firebase"]
   }
 ];
 
 const stats = [
-  { number: "50+", label: "Projects Completed" },
-  { number: "3+", label: "Years Experience" },
-  { number: "100%", label: "Client Satisfaction" },
-  { number: "24/7", label: "Support Available" }
+  { number: "10+", label: "Projects Completed" },
+  { number: "2+", label: "Years Experience" },
+  { number: "600+", label: "LeetCode Problems" },
+  { number: "7.9", label: "CGPA" }
 ];
 
 export const AboutSection = () => {
@@ -47,9 +42,10 @@ export const AboutSection = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            I'm a passionate full-stack developer with a love for creating digital experiences 
-            that make a difference. With expertise in modern web technologies and a keen eye for design, 
-            I bring ideas to life through clean, efficient code.
+            I'm a passionate full-stack developer with 2+ years of experience creating 
+            innovative web and mobile applications. Currently pursuing BTech in Electronics 
+            and Communication Engineering, I love turning complex problems into simple, 
+            beautiful, and intuitive solutions.
           </p>
           
           <div className="flex justify-center">
@@ -68,18 +64,21 @@ export const AboutSection = () => {
           >
             <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              My development journey started 3 years ago when I built my first web application. 
-              Since then, I've been constantly learning and growing, working with startups and 
-              established companies to create impactful digital solutions.
+              My journey began with curiosity about electronics and quickly evolved into 
+              software development. I've gained hands-on experience through internships at 
+              Comely Enterprises and Digital Xperts, working on scalable applications and 
+              backend systems.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I specialize in building full-stack applications using modern technologies like 
-              React, Node.js, and cloud platforms. I'm particularly passionate about creating 
-              user-centered designs that not only look great but also provide exceptional user experiences.
+              I specialize in building full-stack applications using technologies like 
+              Angular, React Native, Node.js, and various databases. I'm passionate about 
+              solving complex problems and constantly learning new technologies to build 
+              innovative solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing to 
-              open-source projects, or sharing knowledge with the developer community.
+              When I'm not coding, you'll find me exploring new technologies, solving 
+              coding challenges on LeetCode, or working on personal projects to expand 
+              my skillset.
             </p>
           </motion.div>
 

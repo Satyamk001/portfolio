@@ -11,6 +11,7 @@ interface NavbarProps {
 const navItems = [
   { id: "home", label: "Home", icon: Home },
   { id: "about", label: "About Me", icon: User },
+  { id: "experience", label: "Experience", icon: Briefcase },
   { id: "portfolio", label: "Portfolio", icon: Briefcase },
   { id: "contact", label: "Contact", icon: Mail },
 ];
@@ -113,11 +114,12 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                 }`}>
                   <Icon className="w-5 h-5" />
                 </div>
-                <span className={`text-xs font-medium transition-colors duration-300 ${
+                 <span className={`text-xs font-medium transition-colors duration-300 ${
                   isActive ? "text-primary" : "text-muted-foreground"
                 }`}>
                   {item.id === "home" ? "Home" : 
                    item.id === "about" ? "About" : 
+                   item.id === "experience" ? "Exp" :
                    item.id === "portfolio" ? "Work" : "Contact"}
                 </span>
               </motion.button>

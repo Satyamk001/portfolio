@@ -93,6 +93,12 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/Satyam_Resume.pdf';
+                link.download = 'Satyam_Resume.pdf';
+                link.click();
+              }}
             >
               <Download className="w-4 h-4 mr-2" />
               Download CV
