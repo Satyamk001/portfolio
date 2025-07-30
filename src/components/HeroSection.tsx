@@ -33,13 +33,13 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
         />
       </div>
 
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6 text-center lg:text-left"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
           >
             Hi, I'm{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -66,7 +66,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-2xl md:text-3xl font-semibold text-muted-foreground"
+            className="text-xl sm:text-2xl md:text-3xl font-semibold text-muted-foreground"
           >
             Full Stack & App Developer
           </motion.h2>
@@ -75,7 +75,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-lg text-muted-foreground max-w-md leading-relaxed"
+            className="text-base sm:text-lg text-muted-foreground max-w-md lg:max-w-lg leading-relaxed mx-auto lg:mx-0"
           >
             I craft scalable web apps and blockchain-based products — blending clean code, smart UX, and modern technology.
           </motion.p>
@@ -95,7 +95,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               My Works
             </Button>
             
-            <Button onClick={handleDownload}
+            <Button
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
@@ -119,7 +119,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             className="pt-6"
           >
             <p className="text-sm text-muted-foreground mb-3">Specialization:</p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
               {["React", "Node.js", "TypeScript", "MongoDB", "AWS", "Web3"].map((tech, index) => (
                 <motion.span
                   key={tech}
@@ -140,7 +140,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative"
+          className="relative flex justify-center lg:justify-end"
         >
           <motion.div
             animate={{ rotate: 360 }}
@@ -156,7 +156,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             <img
               src={profileImage}
               alt="Satyam Kumar"
-              className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl object-cover shadow-elegant border-2 border-primary/20"
+              className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl object-cover shadow-elegant border-2 border-primary/20"
             />
             
             {/* Floating Badge */}

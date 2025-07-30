@@ -40,7 +40,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <div className="pb-16 md:pb-0">
+      <div className="pt-16 lg:pt-20 pb-20 lg:pb-0">
         <HeroSection scrollToSection={scrollToSection} />
         <AboutSection />
         <ExperienceSection />
