@@ -7,12 +7,12 @@ import { ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Register - Job Portal Platform",
+    title: "Rozgars - Job Portal Platform",
     description: "A full-stack job portal website that connects candidates with employers. Developed using Angular, AngularJS, React Native, Express.js, and MySQL with secure user authentication and role-based access for job seekers and employers.",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
     technologies: ["Angular", "Node.js", "MySQL", "Express.js", "JWT"],
-    liveUrl: "https://r2years.com",
-    githubUrl: "#",
+    liveUrl: "https://www.rozgars.com/",
+    githubUrl: "https://www.rozgars.com/",
     featured: true
   },
   {
@@ -25,46 +25,46 @@ const projects = [
     githubUrl: "#",
     featured: true
   },
-  {
-    id: 3,
-    title: "User Authentication & Role-based Access",
-    description: "Implemented comprehensive user authentication system with role-based access control for job seekers and employers. Features secure login, registration, and permission management with JWT tokens.",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
-    technologies: ["Node.js", "JWT", "bcrypt", "Express.js", "MySQL"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false
-  },
-  {
-    id: 4,
-    title: "Razorpay Payment Integration",
-    description: "Integrated Razorpay payment gateway for purchasing courses, subscription plans, and referral earnings. Designed responsive UI for job searching, application tracking, and employer job postings.",
-    image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=600&h=400&fit=crop",
-    technologies: ["Razorpay", "JavaScript", "HTML/CSS", "Payment API"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Email Warm-up System",
-    description: "Developed and integrated an email warm-up feature using Node.js, MongoDB, NodeMailer transporter and cron scheduler to automate reputation-building email flows and ensure consistent deliverability.",
-    image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&h=400&fit=crop",
-    technologies: ["Node.js", "MongoDB", "NodeMailer", "Cron Jobs"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: true
-  },
-  {
-    id: 6,
-    title: "IIS Server Deployment",
-    description: "Deployed complete web application on IIS server ensuring stable hosting, seamless routing, and secure access across multiple gym branches with real-time monitoring and scalable architecture.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
-    technologies: ["IIS Server", "Windows Server", "Deployment", "Monitoring"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false
-  }
+  // {
+  //   id: 3,
+  //   title: "User Authentication & Role-based Access",
+  //   description: "Implemented comprehensive user authentication system with role-based access control for job seekers and employers. Features secure login, registration, and permission management with JWT tokens.",
+  //   image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+  //   technologies: ["Node.js", "JWT", "bcrypt", "Express.js", "MySQL"],
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  //   featured: false
+  // },
+  // {
+  //   id: 4,
+  //   title: "Razorpay Payment Integration",
+  //   description: "Integrated Razorpay payment gateway for purchasing courses, subscription plans, and referral earnings. Designed responsive UI for job searching, application tracking, and employer job postings.",
+  //   image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=600&h=400&fit=crop",
+  //   technologies: ["Razorpay", "JavaScript", "HTML/CSS", "Payment API"],
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  //   featured: false
+  // },
+  // {
+  //   id: 5,
+  //   title: "Email Warm-up System",
+  //   description: "Developed and integrated an email warm-up feature using Node.js, MongoDB, NodeMailer transporter and cron scheduler to automate reputation-building email flows and ensure consistent deliverability.",
+  //   image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&h=400&fit=crop",
+  //   technologies: ["Node.js", "MongoDB", "NodeMailer", "Cron Jobs"],
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  //   featured: true
+  // },
+  // {
+  //   id: 6,
+  //   title: "IIS Server Deployment",
+  //   description: "Deployed complete web application on IIS server ensuring stable hosting, seamless routing, and secure access across multiple gym branches with real-time monitoring and scalable architecture.",
+  //   image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+  //   technologies: ["IIS Server", "Windows Server", "Deployment", "Monitoring"],
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  //   featured: false
+  // }
 ];
 
 export const PortfolioSection = () => {
@@ -167,7 +167,7 @@ export const PortfolioSection = () => {
         </div>
 
         {/* Other Projects */}
-        <div>
+        {/* <div>
           <motion.h3
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -232,7 +232,7 @@ export const PortfolioSection = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* CTA */}
         <motion.div
@@ -245,7 +245,7 @@ export const PortfolioSection = () => {
           <p className="text-muted-foreground mb-6">
             Interested in seeing more of my work or discussing a project?
           </p>
-          <Button
+          <Button onClick={() => window.open("https://github.com/satyamk001", "_blank")}
             size="lg"
             className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-elegant"
           >

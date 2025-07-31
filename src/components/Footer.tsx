@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Heart, Code } from "lucide-react";
 
 const socialLinks = [
-  { icon: <Github className="w-5 h-5" />, href: "#", label: "GitHub" },
-  { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
-  { icon: <Twitter className="w-5 h-5" />, href: "#", label: "Twitter" },
+  { icon: <Github className="w-5 h-5" />, href: "https://github.com/satyamk001", label: "GitHub" },
+  { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/satyamk001/", label: "LinkedIn" },
+  { icon: <Code className="w-5 h-5" />, href: "https://leetcode.com/Satyamk001/", label: "Leetcode" },
   { icon: <Mail className="w-5 h-5" />, href: "mailto:satyamkmr37@developer.com", label: "Email" },
 ];
 
