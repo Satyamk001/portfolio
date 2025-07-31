@@ -68,7 +68,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-xl sm:text-2xl md:text-3xl font-semibold text-muted-foreground"
           >
-            Full Stack & App Developer
+            Full Stack & Mobile App Developer
           </motion.h2>
 
           <motion.p
@@ -77,7 +77,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-base sm:text-lg text-muted-foreground max-w-md lg:max-w-lg leading-relaxed mx-auto lg:mx-0"
           >
-            I craft scalable web apps and blockchain-based products — blending clean code, smart UX, and modern technology.
+            BTech in ECE with 2+ years building scalable web applications, mobile apps, and backend systems. Expert in MERN stack, Angular, React Native, and cloud technologies.
           </motion.p>
 
           <motion.div
@@ -120,7 +120,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           >
             <p className="text-sm text-muted-foreground mb-3">Specialization:</p>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-              {["React", "Node.js", "TypeScript", "MongoDB", "AWS", "Web3"].map((tech, index) => (
+              {["React", "Angular", "Node.js", "React Native", "MongoDB", "MySQL", "Express.js", "REST APIs"].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -167,7 +167,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               className="absolute -bottom-6 -right-6 bg-card border border-border rounded-2xl p-4 shadow-card"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">3+</div>
+                <div className="text-2xl font-bold text-primary">2+</div>
                 <div className="text-xs text-muted-foreground">Years Experience</div>
               </div>
             </motion.div>

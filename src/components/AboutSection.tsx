@@ -8,17 +8,22 @@ const skills = [
   {
     category: "Frontend",
     icon: <Code className="w-6 h-6" />,
-    technologies: ["React", "Angular", "AngularJS", "HTML/CSS", "JavaScript"]
+    technologies: ["React", "Angular", "AngularJS", "HTML5", "CSS3", "JavaScript", "TypeScript", "Bootstrap"]
   },
   {
     category: "Backend",
     icon: <Database className="w-6 h-6" />,
-    technologies: ["Node.js", "Express.js", "MongoDB", "MySQL", "RESTful APIs"]
+    technologies: ["Node.js", "Express.js", "MongoDB", "MySQL", "RESTful APIs", "JWT", "Mongoose", "Bcrypt"]
   },
   {
     category: "Mobile",
     icon: <Smartphone className="w-6 h-6" />,
-    technologies: ["React Native", "Cross-platform", "iOS", "Android", "Firebase"]
+    technologies: ["React Native", "Cross-platform", "iOS", "Android", "Firebase", "Expo"]
+  },
+  {
+    category: "Cloud & Tools",
+    icon: <Cloud className="w-6 h-6" />,
+    technologies: ["Git", "GitHub", "VS Code", "Postman", "npm", "Firebase", "Deployment"]
   }
 ];
 
@@ -42,10 +47,10 @@ export const AboutSection = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            I'm a passionate full-stack developer with 2+ years of experience creating 
-            innovative web and mobile applications. Currently pursuing BTech in Electronics 
-            and Communication Engineering, I love turning complex problems into simple, 
-            beautiful, and intuitive solutions.
+            I'm a passionate full-stack and mobile app developer with 2+ years of experience creating 
+            innovative applications. Pursuing BTech in Electronics and Communication Engineering 
+            with 7.9 CGPA, I specialize in MERN stack, Angular, React Native, and backend development. 
+            I love turning complex problems into simple, scalable, and intuitive solutions.
           </p>
           
           <div className="flex justify-center">
@@ -64,21 +69,21 @@ export const AboutSection = () => {
           >
             <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              My journey began with curiosity about electronics and quickly evolved into 
-              software development. I've gained hands-on experience through internships at 
-              Comely Enterprises and Digital Xperts, working on scalable applications and 
-              backend systems.
+              My journey began with electronics engineering and evolved into full-stack development. 
+              I've gained hands-on experience through internships at Comely Enterprises and Digital Xperts, 
+              building scalable web applications, mobile apps, and robust backend systems using MERN stack 
+              and Angular frameworks.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I specialize in building full-stack applications using technologies like 
-              Angular, React Native, Node.js, and various databases. I'm passionate about 
-              solving complex problems and constantly learning new technologies to build 
-              innovative solutions.
+              I specialize in full-stack development with React, Angular, Node.js, Express.js, MongoDB, 
+              and MySQL. My mobile development expertise includes React Native for cross-platform apps. 
+              I'm passionate about creating efficient REST APIs, implementing secure authentication, 
+              and building responsive, user-friendly interfaces.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, solving 
-              coding challenges on LeetCode, or working on personal projects to expand 
-              my skillset.
+              Currently maintaining a 7.9 CGPA in BTech ECE while actively solving 600+ LeetCode problems. 
+              I enjoy working on challenging projects that combine technical excellence with innovative 
+              solutions, constantly learning new technologies to stay ahead in the rapidly evolving tech landscape.
             </p>
           </motion.div>
 
