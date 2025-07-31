@@ -9,7 +9,6 @@ const experiences = [
     title: "Full Stack Developer Intern",
     company: "Comely Enterprises Pvt. Ltd.",
     duration: "Jan 2025 - May 2025",
-    location: "Remote",
     description: [
       "Built and maintained scalable cross-platform applications using Angular, AngularJS, React Native, Express.js, and MySQL",
       "Contributing to a 25% increase in development efficiency through modular code practices",
@@ -20,9 +19,8 @@ const experiences = [
   },
   {
     title: "Backend Developer Intern",
-    company: "Digital Xperts",
+    company: "Digital Guruji",
     duration: "June 2025 - June 2025",
-    location: "Remote",
     description: [
       "Developed and integrated an email warm-up feature using Node.js, MongoDB, NodeMailer transporter and cron scheduler",
       "Implemented custom cron jobs to control email sending, volume controls and various management rules",
@@ -113,10 +111,7 @@ const TimelineCard = ({ experience, index, totalCards }: { experience: typeof ex
                   <Calendar className="h-4 w-4" />
                   <span>{experience.duration}</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <MapPin className="h-4 w-4" />
-                  <span>{experience.location}</span>
-                </div>
+                
               </div>
             </div>
           </CardHeader>
