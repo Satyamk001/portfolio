@@ -29,7 +29,7 @@ const skills = [
 
 const stats = [
   { number: "10+", label: "Projects Completed" },
-  { number: "2+", label: "Years Experience" },
+  { number: "6M", label: "Experience" },
   { number: "600+", label: "LeetCode Problems" },
   { number: "7.9", label: "CGPA" }
 ];
@@ -46,8 +46,8 @@ export const AboutSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            I'm a passionate full-stack and mobile app developer with 2+ years of experience creating 
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-4 sm:px-0">
+            I'm a passionate full-stack and mobile app developer with 6 months of experience creating 
             innovative applications. Pursuing BTech in Electronics and Communication Engineering 
             with 7.9 CGPA, I specialize in MERN stack, Angular, React Native, and backend development. 
             I love turning complex problems into simple, scalable, and intuitive solutions.

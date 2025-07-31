@@ -33,7 +33,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
         />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center relative z-10 pb-20 sm:pb-8 lg:pb-0">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -75,9 +75,9 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-base sm:text-lg text-muted-foreground max-w-md lg:max-w-lg leading-relaxed mx-auto lg:mx-0"
+            className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-md lg:max-w-lg leading-relaxed mx-auto lg:mx-0 px-2 sm:px-0"
           >
-            BTech in ECE with 2+ years building scalable web applications, mobile apps, and backend systems. Expert in MERN stack, Angular, React Native, and cloud technologies.
+            BTech in ECE with 6 months building scalable web applications, mobile apps, and backend systems. Expert in MERN stack, Angular, React Native, and cloud technologies.
           </motion.p>
 
           <motion.div
@@ -167,8 +167,8 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               className="absolute -bottom-6 -right-6 bg-card border border-border rounded-2xl p-4 shadow-card"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">2+</div>
-                <div className="text-xs text-muted-foreground">Years Experience</div>
+                <div className="text-lg sm:text-xl font-bold text-primary">6M</div>
+                <div className="text-xs text-muted-foreground">Experience</div>
               </div>
             </motion.div>
           </motion.div>
