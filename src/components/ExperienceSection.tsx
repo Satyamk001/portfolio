@@ -80,7 +80,7 @@ const TimelineCard = ({ experience, index, totalCards }: { experience: typeof ex
           ease: [0.25, 0.25, 0, 1],
           delay: 0.1
         }}
-        className={`relative w-full lg:w-1/2 ${isEven ? 'lg:pr-8' : 'lg:pl-8 lg:ml-auto'} mb-16 lg:mb-32`}
+        className={`relative w-full lg:w-1/2 ${isEven ? 'lg:pr-8' : 'lg:pl-8 lg:ml-auto'} mb-8 sm:mb-12 lg:mb-32`}
       >
         {/* Connection Line to Timeline */}
         <motion.div 
@@ -160,7 +160,7 @@ const TimelineCard = ({ experience, index, totalCards }: { experience: typeof ex
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="experience" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       
@@ -170,9 +170,9 @@ export const ExperienceSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 lg:mb-24"
+          className="text-center mb-12 sm:mb-16 lg:mb-24"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Work <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">

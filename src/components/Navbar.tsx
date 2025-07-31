@@ -163,14 +163,15 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
         </motion.div>
       )}
 
-      {/* Mobile Bottom Navigation */}
+      {/* Mobile Bottom Navigation - Floating */}
       <motion.nav
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-border"
+        className="lg:hidden fixed bottom-4 left-4 right-4 z-50"
       >
-        <div className="flex items-center justify-around px-4 py-3">
+        <div className="bg-background/95 backdrop-blur-md border border-border rounded-2xl shadow-lg px-2 py-3">
+          <div className="flex items-center justify-around">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.id;
@@ -215,6 +216,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
             </div>
             <span className="text-xs font-medium text-muted-foreground">Theme</span>
           </motion.button>
+          </div>
         </div>
       </motion.nav>
     </>

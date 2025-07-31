@@ -33,7 +33,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
         />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -54,7 +54,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
           >
             Hi, I'm{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -66,7 +66,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-xl sm:text-2xl md:text-3xl font-semibold text-muted-foreground"
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-muted-foreground"
           >
             Full Stack & Mobile App Developer
           </motion.h2>
@@ -156,7 +156,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             <img
               src={profileImage}
               alt="Satyam Kumar"
-              className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl object-cover shadow-elegant border-2 border-primary/20"
+              className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl object-cover shadow-elegant border-2 border-primary/20"
             />
             
             {/* Floating Badge */}
