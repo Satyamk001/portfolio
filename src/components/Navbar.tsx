@@ -49,13 +49,13 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
             </motion.div>
 
             {/* Desktop Navigation Items - Pill Style */}
-            <div className="hidden xl:flex items-center space-x-2 bg-secondary/50 backdrop-blur-sm rounded-full p-1 border border-border/50">
+            <div className="hidden lg:flex items-center space-x-2 bg-secondary/50 backdrop-blur-sm rounded-full p-1 border border-border/50">
               {navItems.map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 xl:px-6 py-2 rounded-full transition-all duration-300 text-sm ${
+                  className={`relative px-4 lg:px-6 py-2 rounded-full transition-all duration-300 text-sm ${
                     activeSection === item.id
                       ? "bg-background text-foreground shadow-md"
                       : "hover:bg-background/50"
@@ -73,7 +73,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="rounded-full xl:hidden"
+                className="rounded-full lg:hidden"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-5 w-5" />
@@ -111,7 +111,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-lg lg:hidden xl:hidden"
+          className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-lg lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <motion.div
