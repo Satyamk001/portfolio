@@ -25,6 +25,16 @@ const projects = [
     githubUrl: "#",
     featured: true
   },
+  {
+    id: 3,
+    title: "AI Diagram Creator - Mermaid Sketcher",
+    description: "An intelligent diagram creation tool that combines Mermaid syntax with AI assistance. Features real-time diagram generation, AI-powered prompts for creating flowcharts, and export functionality with clean, intuitive interface.",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+    technologies: ["React", "TypeScript", "AI Integration", "Mermaid", "Tailwind CSS"],
+    liveUrl: "https://sketcher.lovable.app/",
+    githubUrl: "https://lovable.dev/projects/a178164e-2c25-4258-ab93-2372ce2927e0",
+    featured: true
+  },
   // {
   //   id: 3,
   //   title: "User Authentication & Role-based Access",
@@ -125,6 +135,7 @@ export const PortfolioSection = () => {
                           size="sm"
                           variant="secondary"
                           className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                          onClick={() => window.open(project.liveUrl, "_blank")}
                         >
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Live Demo
@@ -133,6 +144,7 @@ export const PortfolioSection = () => {
                           size="sm"
                           variant="secondary"
                           className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+                          onClick={() => window.open(project.githubUrl, "_blank")}
                         >
                           <Github className="w-4 h-4 mr-2" />
                           Code
