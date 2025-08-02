@@ -6,6 +6,7 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -40,7 +41,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <div className="pt-16 lg:pt-20 pb-24 lg:pb-0">
+      <div className="lg:pt-20">
         <HeroSection scrollToSection={scrollToSection} />
         <AboutSection />
         <ExperienceSection />
@@ -48,6 +49,7 @@ const Index = () => {
         <ContactSection />
         <Footer />
       </div>
+      <ScrollToTop />
     </div>
   );
 };

@@ -204,17 +204,17 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
             );
           })}
           
-          {/* Theme toggle for mobile */}
+           {/* Theme toggle for mobile */}
           <motion.button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex flex-col items-center space-y-1 p-2 rounded-xl"
+            className="flex flex-col items-center space-y-1 p-2 rounded-xl min-w-0"
             whileTap={{ scale: 0.95 }}
           >
-            <div className="p-2 rounded-full text-muted-foreground">
-              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <div className="p-2 rounded-full text-muted-foreground relative">
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute top-2 left-2 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </div>
-            <span className="text-xs font-medium text-muted-foreground">Theme</span>
+            <span className="text-[10px] font-medium text-muted-foreground truncate">Theme</span>
           </motion.button>
           </div>
         </div>
