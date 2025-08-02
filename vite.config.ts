@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -11,12 +10,36 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    chunkSizeWarningLimit: 700, // Raise the limit if necessary
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split React core
+          react: ['react', 'react-dom'],
+          
+          // Split UI components (adjust according to what you use)
+          shadcn: [
+            '@/components/ui/button',
+            '@/components/ui/input',
+            '@/components/ui/card',
+            '@/components/ui/dialog',
+            'lucide-react'
+          ],
+
+          // Other external libs
+          vendor: [
+            'react-router-dom'
+          ],
+        },
+      },
     },
   },
 }));

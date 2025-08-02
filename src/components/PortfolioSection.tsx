@@ -9,10 +9,10 @@ const projects = [
     id: 1,
     title: "Rozgars - Job Portal Platform",
     description: "A full-stack job portal website that connects candidates with employers. Developed using Angular, AngularJS, React Native, Express.js, and MySQL with secure user authentication and role-based access for job seekers and employers.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+    image: "./public/rozgars.jpeg",
     technologies: ["Angular", "Node.js", "MySQL", "Express.js", "JWT"],
     liveUrl: "https://www.rozgars.com/",
-    githubUrl: "https://www.rozgars.com/",
+    //githubUrl: "https://www.rozgars.com/",
     featured: true
   },
   {
@@ -21,18 +21,18 @@ const projects = [
     description: "A scalable web application for multi-gym operations built with Angular, Node.js, and MySQL. Features include attendance tracking, salary calculation, membership plan purchases, and flexible installment-based payment options.",
     image: "https://images.unsplash.com/photo-1571019613324-20c773b1fb88?w=600&h=400&fit=crop",
     technologies: ["Angular", "Node.js", "MySQL", "Express.js", "Payment Gateway"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "hosted on IIS server",
+    //githubUrl: "#",
     featured: true
   },
   {
     id: 3,
     title: "AI Diagram Creator - Mermaid Sketcher",
     description: "An intelligent diagram creation tool that combines Mermaid syntax with AI assistance. Features real-time diagram generation, AI-powered prompts for creating flowcharts, and export functionality with clean, intuitive interface.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+    image: "./public/isketcher.png",
     technologies: ["React", "TypeScript", "AI Integration", "Mermaid", "Tailwind CSS"],
-    liveUrl: "https://sketcher.lovable.app/",
-    githubUrl: "https://lovable.dev/projects/a178164e-2c25-4258-ab93-2372ce2927e0",
+    liveUrl: "https://isketcher.netlify.app/",
+    //githubUrl: "https://lovable.dev/projects/a178164e-2c25-4258-ab93-2372ce2927e0",
     featured: true
   },
   // {
@@ -137,10 +137,11 @@ export const PortfolioSection = () => {
                           className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
                           onClick={() => window.open(project.liveUrl, "_blank")}
                         >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Live Demo
+                          
+                          {project.id != 2 ? <ExternalLink className="w-4 h-4 mr-2" /> : ''}
+                          {project.id == 2 ? project.liveUrl : 'Live Demo'}
                         </Button>
-                        <Button
+                        {/* <Button
                           size="sm"
                           variant="secondary"
                           className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
@@ -148,7 +149,7 @@ export const PortfolioSection = () => {
                         >
                           <Github className="w-4 h-4 mr-2" />
                           Code
-                        </Button>
+                        </Button> */}
                       </div>
                     </div>
                   </div>
