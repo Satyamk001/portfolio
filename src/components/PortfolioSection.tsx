@@ -3,13 +3,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-
+import rozgars from "@/assets/rozgars.jpeg";
+import isketcher from "@/assets/isketcher.png";
+import fitnest from "@/assets/fitnest.png";
 const projects = [
   {
     id: 1,
     title: "Rozgars - Job Portal Platform",
     description: "A full-stack job portal website that connects candidates with employers. Developed using Angular, AngularJS, React Native, Express.js, and MySQL with secure user authentication and role-based access for job seekers and employers.",
-    image: "./public/rozgars.jpeg",
+    image: rozgars,
     technologies: ["Angular", "Node.js", "MySQL", "Express.js", "JWT"],
     liveUrl: "https://www.rozgars.com/",
     //githubUrl: "https://www.rozgars.com/",
@@ -19,7 +21,7 @@ const projects = [
     id: 2,
     title: "Fitness: Multi-Gym Management System",
     description: "A scalable web application for multi-gym operations built with Angular, Node.js, and MySQL. Features include attendance tracking, salary calculation, membership plan purchases, and flexible installment-based payment options.",
-    image: "https://images.unsplash.com/photo-1571019613324-20c773b1fb88?w=600&h=400&fit=crop",
+    image: fitnest,
     technologies: ["Angular", "Node.js", "MySQL", "Express.js", "Payment Gateway"],
     liveUrl: "hosted on IIS server",
     //githubUrl: "#",
@@ -29,7 +31,7 @@ const projects = [
     id: 3,
     title: "AI Diagram Creator - Mermaid Sketcher",
     description: "An intelligent diagram creation tool that combines Mermaid syntax with AI assistance. Features real-time diagram generation, AI-powered prompts for creating flowcharts, and export functionality with clean, intuitive interface.",
-    image: "./public/isketcher.png",
+    image: isketcher,
     technologies: ["React", "TypeScript", "AI Integration", "Mermaid", "Tailwind CSS"],
     liveUrl: "https://isketcher.netlify.app/",
     //githubUrl: "https://lovable.dev/projects/a178164e-2c25-4258-ab93-2372ce2927e0",
