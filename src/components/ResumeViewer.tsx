@@ -20,9 +20,9 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] ">
+      <DialogContent className="max-w-6xl max-h-[90vh] w-[95%] sm:w-full p-4 sm:p-6">
         <DialogHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-          <DialogTitle className="text-2xl font-bold">My Resume</DialogTitle>
+          <DialogTitle className="text-xl sm:text-2xl font-bold">My Resume</DialogTitle>
           <div className="flex items-center space-x-2">
             {/* <Button
               onClick={handleDownload}
@@ -44,16 +44,16 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
         
         <div className="max-h-[75vh] overflow-y-scroll">
           {/* Resume Content - Replace with actual resume */}
-          <div className="bg-white text-black p-8 rounded-lg shadow-inner min-h-[800px]">
-            <div className="max-w-3xl mx-auto">
-              <header className="text-center mb-8">
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">Satyam Kumar</h1>
-                <p className="text-xl text-gray-600 mb-4">Full Stack Developer</p>
-                <div className="flex justify-center space-x-6 text-sm text-gray-600">
+          <div className="bg-white text-black p-4 sm:p-6 lg:p-8 rounded-lg shadow-inner min-h-[400px] sm:min-h-[600px] lg:min-h-[800px]">
+            <div className="max-w-4xl mx-auto">
+              <header className="text-center mb-6 sm:mb-8">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Satyam Kumar</h1>
+                <p className="text-lg sm:text-xl text-gray-600 mb-4">Full Stack Developer</p>
+                <div className="flex flex-col sm:flex-row justify-center space-y-1 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-gray-600">
                   <span>satyamkmr37@gmail.com</span>
                   <span>+91 95829 06377</span>
-                  <span>linkedin.com/in/satyamk001</span>
-                  <span>github.com/satyamk001</span>
+                  <a href="https://linkedin.com/in/satyamk001" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">linkedin.com/in/satyamk001</a>
+                  <a href="https://github.com/satyamk001" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">github.com/satyamk001</a>
                 </div>
               </header>
 
@@ -82,9 +82,9 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
                 </div>
               </section>
 
-              <section className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-200 pb-2">Skills</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <section className="mb-6 sm:mb-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-200 pb-2">Skills</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Frontend</h4>
                     <ul className="text-gray-700 text-sm space-y-1">
@@ -143,7 +143,7 @@ export const ResumeButton = () => {
         <Button
           onClick={() => setIsResumeOpen(true)}
           variant="outline"
-          className="border-primary/20 hover:border-primary/40 hover:bg-primary/5"
+          className="border-primary/20 hover:border-primary/40 bg-glass backdrop-blur-glass shadow-glass hover:bg-primary/5"
         >
           <Eye className="h-4 w-4 mr-2" />
           View Resume

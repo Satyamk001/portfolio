@@ -73,9 +73,16 @@ export default {
 				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-hero': 'var(--gradient-hero)',
 			},
+			backgroundColor: {
+				'glass': 'rgb(var(--glass-bg))',
+			},
+			backdropBlur: {
+				'glass': '10px',
+			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
 				'card': 'var(--shadow-card)',
+				'glass': 'var(--glass-shadow)',
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',

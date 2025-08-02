@@ -163,14 +163,14 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
         </motion.div>
       )}
 
-      {/* Mobile Bottom Navigation - Floating */}
+      {/* Mobile Bottom Navigation - Floating Glass */}
       <motion.nav
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="lg:hidden fixed bottom-4 left-4 right-4 z-50"
+        className="lg:hidden fixed bottom-3 left-[5%] right-[5%] z-50 w-[90%] mx-auto"
       >
-        <div className="bg-background/95 backdrop-blur-md border border-border rounded-2xl shadow-lg px-2 py-3">
+        <div className="bg-glass backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass px-2 py-3">
           <div className="flex items-center justify-around">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -183,16 +183,17 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                 className={`flex flex-col items-center space-y-1 p-2 rounded-xl transition-all duration-300 ${
                   isActive ? "bg-primary/10" : ""
                 }`}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
               >
                 <div className={`p-2 rounded-full transition-all duration-300 ${
                   isActive 
-                    ? "bg-primary text-primary-foreground shadow-lg" 
-                    : "text-muted-foreground"
+                    ? "bg-primary text-primary-foreground shadow-lg scale-110" 
+                    : "text-muted-foreground hover:text-foreground"
                 }`}>
                   <Icon className="w-5 h-5" />
                 </div>
-                 <span className={`text-xs font-medium transition-colors duration-300 ${
+                <span className={`text-[10px] font-medium transition-colors duration-300 ${
                   isActive ? "text-primary" : "text-muted-foreground"
                 }`}>
                   {item.id === "home" ? "Home" : 
@@ -208,13 +209,14 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
           <motion.button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="flex flex-col items-center space-y-1 p-2 rounded-xl min-w-0"
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
           >
-            <div className="p-2 rounded-full text-muted-foreground relative">
+            <div className="p-2 rounded-full text-muted-foreground hover:text-foreground relative transition-colors duration-300">
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute top-2 left-2 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </div>
-            <span className="text-[10px] font-medium text-muted-foreground truncate">Theme</span>
+            <span className="text-[10px] font-medium text-muted-foreground">Theme</span>
           </motion.button>
           </div>
         </div>
