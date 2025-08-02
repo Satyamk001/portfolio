@@ -58,7 +58,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                   className={`relative px-4 lg:px-6 py-2 rounded-full transition-all duration-300 text-sm ${
                     activeSection === item.id
                       ? "bg-background text-foreground shadow-md"
-                      : "hover:bg-background/50"
+                      : "hover:bg-background/80 hover:text-foreground"
                   }`}
                 >
                   {item.label}

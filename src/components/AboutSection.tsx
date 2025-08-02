@@ -135,15 +135,15 @@ export const AboutSection = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <Card className="p-6 h-full shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10">
-                  <CardContent className="p-0">
+                <Card className="p-4 sm:p-6 h-full shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 flex flex-col">
+                  <CardContent className="p-0 flex-1 flex flex-col">
                     <div className="flex items-center mb-4">
-                      <div className="p-3 bg-gradient-primary rounded-lg text-white mr-3">
+                      <div className="p-2 sm:p-3 bg-gradient-primary rounded-lg text-white mr-3 flex-shrink-0">
                         {skill.icon}
                       </div>
-                      <h4 className="font-semibold text-lg">{skill.category}</h4>
+                      <h4 className="font-semibold text-base sm:text-lg">{skill.category}</h4>
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 flex-1">
                       {skill.technologies.map((tech) => (
                         <Badge
                           key={tech}
