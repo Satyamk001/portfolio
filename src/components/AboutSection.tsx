@@ -127,59 +127,55 @@ export const AboutSection = () => {
           <h3 className="text-3xl font-semibold text-center mb-12">Skills & Technologies</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ 
-                  opacity: 0, 
-                  y: 40,
-                  scale: 0.9
-                }}
-                whileInView={{ 
-                  opacity: 1, 
-                  y: 0,
-                  scale: 1
-                }}
-                whileHover={{ 
-                  y: -8,
-                  scale: 1.02,
-                  transition: { 
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 25
-                  }
-                }}
-                transition={{ 
-                  duration: 0.6,
-                  delay: index * 0.15,
-                  type: "spring",
-                  stiffness: 120,
-                  damping: 20
-                }}
-                viewport={{ once: false, margin: "-50px" }}
-                className="will-change-transform"
-              >
-                <Card className="p-4 sm:p-6 h-full shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 flex flex-col">
-                  <CardContent className="p-0 flex-1 flex flex-col">
-                    <div className="flex items-center mb-4">
-                      <div className="p-2 sm:p-3 bg-gradient-primary rounded-lg text-white mr-3 flex-shrink-0">
-                        {skill.icon}
+              <div key={index} className="relative">
+                <motion.div
+                  initial={{ 
+                    opacity: 0, 
+                    y: 30
+                  }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    y: 0
+                  }}
+                  whileHover={{ 
+                    y: -4,
+                    transition: { 
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 25
+                    }
+                  }}
+                  transition={{ 
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: "easeOut"
+                  }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  className="h-full"
+                >
+                  <Card className="p-4 sm:p-6 h-full shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 flex flex-col">
+                    <CardContent className="p-0 flex-1 flex flex-col">
+                      <div className="flex items-center mb-4">
+                        <div className="p-2 sm:p-3 bg-gradient-primary rounded-lg text-white mr-3 flex-shrink-0">
+                          {skill.icon}
+                        </div>
+                        <h4 className="font-semibold text-base sm:text-lg">{skill.category}</h4>
                       </div>
-                      <h4 className="font-semibold text-base sm:text-lg">{skill.category}</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2 flex-1">
-                      {skill.technologies.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2 flex-1">
+                        {skill.technologies.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="secondary"
+                            className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
