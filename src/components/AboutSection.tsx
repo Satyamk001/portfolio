@@ -129,11 +129,29 @@ export const AboutSection = () => {
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                initial={{ 
+                  opacity: 0, 
+                  x: index % 2 === 0 ? -100 : 100,
+                  y: 20 
+                }}
+                whileInView={{ 
+                  opacity: 1, 
+                  x: 0,
+                  y: 0 
+                }}
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  transition: { duration: 0.2 }
+                }}
+                transition={{ 
+                  duration: 0.6,
+                  delay: index * 0.15,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12
+                }}
+                viewport={{ once: false, margin: "-100px" }}
               >
                 <Card className="p-4 sm:p-6 h-full shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 flex flex-col">
                   <CardContent className="p-0 flex-1 flex flex-col">
