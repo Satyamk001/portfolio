@@ -93,14 +93,26 @@ export const ContactSection = () => {
               <motion.a
                 key={index}
                 href={info.action}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, x: -50, scale: 0.9 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.15,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                viewport={{ once: true, margin: "-50px" }}
+                whileHover={{ 
+                  scale: 1.05,
+                  x: 8,
+                  transition: { 
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 25
+                  }
+                }}
                 className="block"
               >
-                <Card className="p-4 shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 group cursor-pointer">
+                <Card className="p-4 shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 group cursor-pointer hover:border-primary/30">
                   <CardContent className="p-0">
                     <div className="flex items-center space-x-4">
                       <div className="p-3 bg-gradient-primary rounded-lg text-white group-hover:scale-110 transition-transform">
@@ -120,11 +132,24 @@ export const ContactSection = () => {
 
             {/* Availability Status */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-card rounded-2xl p-6 border border-primary/20 shadow-card"
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.4,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{
+                scale: 1.02,
+                y: -4,
+                transition: { 
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 25
+                }
+              }}
+              className="bg-card rounded-2xl p-6 border border-primary/20 shadow-card hover:shadow-elegant hover:border-primary/40 transition-all duration-300"
             >
               <div className="flex items-center mb-4">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse mr-3"></div>

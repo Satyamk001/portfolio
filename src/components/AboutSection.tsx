@@ -98,13 +98,25 @@ export const AboutSection = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                viewport={{ once: true, margin: "-50px" }}
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  transition: { 
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 25
+                  }
+                }}
               >
-                <Card className="text-center p-6 shadow-card border-primary/10 hover:shadow-elegant transition-all duration-300">
+                <Card className="text-center p-6 shadow-card border-primary/10 hover:shadow-elegant hover:border-primary/30 transition-all duration-300">
                   <CardContent className="p-0">
                     <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
                       {stat.number}
@@ -131,26 +143,29 @@ export const AboutSection = () => {
                 <motion.div
                   initial={{ 
                     opacity: 0, 
-                    y: 30
+                    y: 60,
+                    scale: 0.9
                   }}
                   whileInView={{ 
                     opacity: 1, 
-                    y: 0
+                    y: 0,
+                    scale: 1
                   }}
+                  transition={{ 
+                    duration: 0.7,
+                    delay: index * 0.1,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                  viewport={{ once: true, margin: "-100px" }}
                   whileHover={{ 
-                    y: -4,
+                    y: -8,
+                    scale: 1.03,
                     transition: { 
                       type: "spring",
                       stiffness: 400,
                       damping: 25
                     }
                   }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: "easeOut"
-                  }}
-                  viewport={{ once: true, margin: "-50px" }}
                   className="h-full"
                 >
                   <Card className="p-4 sm:p-6 h-full shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 flex flex-col">

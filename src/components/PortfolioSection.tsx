@@ -117,11 +117,23 @@ export const PortfolioSection = () => {
             {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
+                initial={{ opacity: 0, y: 80, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.2,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                viewport={{ once: true, margin: "-100px" }}
+                whileHover={{ 
+                  y: -12,
+                  scale: 1.02,
+                  transition: { 
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 25
+                  }
+                }}
                 className="group"
               >
                 <Card className="overflow-hidden shadow-card hover:shadow-elegant transition-all duration-500 border-primary/10">
