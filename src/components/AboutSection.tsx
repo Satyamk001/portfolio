@@ -131,27 +131,38 @@ export const AboutSection = () => {
                 key={index}
                 initial={{ 
                   opacity: 0, 
-                  x: index % 2 === 0 ? -100 : 100,
-                  y: 20 
+                  y: 60,
+                  scale: 0.8,
+                  rotateX: 45
                 }}
                 whileInView={{ 
                   opacity: 1, 
-                  x: 0,
-                  y: 0 
+                  y: 0,
+                  scale: 1,
+                  rotateX: 0
                 }}
                 whileHover={{ 
-                  y: -8,
-                  scale: 1.02,
-                  transition: { duration: 0.2 }
+                  y: -12,
+                  scale: 1.05,
+                  rotateY: 5,
+                  transition: { 
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20
+                  }
                 }}
                 transition={{ 
-                  duration: 0.6,
-                  delay: index * 0.15,
+                  duration: 0.8,
+                  delay: index * 0.2,
                   type: "spring",
                   stiffness: 100,
-                  damping: 12
+                  damping: 15
                 }}
-                viewport={{ once: false, margin: "-100px" }}
+                viewport={{ once: false, margin: "-50px" }}
+                style={{ 
+                  transformStyle: "preserve-3d",
+                  perspective: "1000px"
+                }}
               >
                 <Card className="p-4 sm:p-6 h-full shadow-card hover:shadow-elegant transition-all duration-300 border-primary/10 flex flex-col">
                   <CardContent className="p-0 flex-1 flex flex-col">
