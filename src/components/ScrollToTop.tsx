@@ -35,13 +35,14 @@ export const ScrollToTop = () => {
           exit={{ opacity: 0, scale: 0 }}
           className="fixed bottom-24 right-4 z-[70] lg:bottom-8 lg:right-8"
         >
-          <Button
+          <motion.button
             onClick={scrollToTop}
-            size="icon"
-            className="w-14 h-14 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-glass hover:shadow-xl transition-all duration-300 hover:scale-110"
+            className="w-14 h-14 bg-glass backdrop-blur-glass border border-white/20 text-primary rounded-full shadow-glass hover:shadow-xl transition-all duration-300"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             <ChevronUp className="w-6 h-6" />
-          </Button>
+          </motion.button>
         </motion.div>
       )}
     </AnimatePresence>

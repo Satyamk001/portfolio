@@ -42,10 +42,12 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-xl lg:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent cursor-pointer"
+              className="bg-glass backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass px-4 py-2 cursor-pointer"
               onClick={() => scrollToSection("home")}
             >
-              Satyam
+              <div className="text-xl lg:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                Satyam
+              </div>
             </motion.div>
 
             {/* Desktop Navigation Items - Clean Glass Style */}
@@ -59,7 +61,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                     onClick={() => scrollToSection(item.id)}
                     className={`px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium ${
                       isActive 
-                        ? "bg-primary text-primary-foreground shadow-lg" 
+                        ? "bg-glass backdrop-blur-glass border border-white/30 text-primary shadow-lg" 
                         : "text-muted-foreground hover:text-foreground hover:bg-white/10"
                     }`}
                     whileTap={{ scale: 0.95 }}
@@ -214,7 +216,6 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute top-2 left-2 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </div>
-            <span className="text-[10px] font-medium text-muted-foreground">Theme</span>
           </motion.button>
           </div>
         </div>
