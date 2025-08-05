@@ -35,35 +35,42 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+        className="hidden lg:block fixed top-0 left-0 right-0 z-50"
       >
-        <div className="container mx-auto px-4 lg:px-6 py-3 lg:py-4">
-          <div className="flex items-center justify-between">
+        <div className="container mx-auto px-4 lg:px-8 xl:px-12 py-3 lg:py-4">
+          <div className="flex items-center justify-between max-w-7xl mx-auto">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-xl lg:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent cursor-pointer"
+              className="bg-glass backdrop-blur-glass rounded-2xl shadow-glass px-4 py-2 cursor-pointer"
               onClick={() => scrollToSection("home")}
             >
-              Satyam
+              <div className="text-xl lg:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                Satyam
+              </div>
             </motion.div>
 
-            {/* Desktop Navigation Items - Pill Style */}
-            <div className="hidden lg:flex items-center space-x-2 bg-secondary/50 backdrop-blur-sm rounded-full p-1 border border-border/50">
-              {navItems.map((item) => (
-                <Button
-                  key={item.id}
-                  variant="ghost"
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 lg:px-6 py-2 rounded-full transition-all duration-300 text-sm ${
-                    activeSection === item.id
-                      ? "bg-background text-foreground shadow-md"
-                      : "hover:bg-background/80 hover:text-foreground"
-                  }`}
-                >
-                  {item.label}
-                </Button>
-              ))}
+            {/* Desktop Navigation Items - Clean Glass Style */}
+            <div className="hidden lg:flex items-center space-x-1 bg-glass backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass px-4 py-2">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id;
+                
+                return (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium ${
+                      isActive 
+                        ? "bg-glass backdrop-blur-glass text-primary shadow-lg" 
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/10"
+                    }`}
+                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    {item.label}
+                  </motion.button>
+                );
+              })}
             </div>
 
             {/* Theme Toggle & CTA */}
@@ -193,14 +200,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                 }`}>
                   <Icon className="w-5 h-5" />
                 </div>
-                <span className={`text-[10px] font-medium transition-colors duration-300 ${
-                  isActive ? "text-primary" : "text-muted-foreground"
-                }`}>
-                  {item.id === "home" ? "Home" : 
-                   item.id === "about" ? "About" : 
-                   item.id === "experience" ? "Exp" :
-                   item.id === "portfolio" ? "Work" : "Contact"}
-                </span>
+                {/* No text for mobile - only icons */}
               </motion.button>
             );
           })}
@@ -216,7 +216,6 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute top-2 left-2 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </div>
-            <span className="text-[10px] font-medium text-muted-foreground">Theme</span>
           </motion.button>
           </div>
         </div>
