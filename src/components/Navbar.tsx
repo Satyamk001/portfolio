@@ -37,12 +37,12 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
         transition={{ duration: 0.6 }}
         className="hidden lg:block fixed top-0 left-0 right-0 z-50"
       >
-        <div className="container mx-auto px-4 lg:px-6 py-3 lg:py-4">
-          <div className="flex items-center justify-between">
+        <div className="container mx-auto px-4 lg:px-8 xl:px-12 py-3 lg:py-4">
+          <div className="flex items-center justify-between max-w-7xl mx-auto">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-glass backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass px-4 py-2 cursor-pointer"
+              className="bg-glass backdrop-blur-glass rounded-2xl shadow-glass px-4 py-2 cursor-pointer"
               onClick={() => scrollToSection("home")}
             >
               <div className="text-xl lg:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
@@ -61,7 +61,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                     onClick={() => scrollToSection(item.id)}
                     className={`px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium ${
                       isActive 
-                        ? "bg-glass backdrop-blur-glass border border-white/30 text-primary shadow-lg" 
+                        ? "bg-glass backdrop-blur-glass text-primary shadow-lg" 
                         : "text-muted-foreground hover:text-foreground hover:bg-white/10"
                     }`}
                     whileTap={{ scale: 0.95 }}
