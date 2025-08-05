@@ -41,14 +41,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <div className="lg:pt-20">
-        <HeroSection scrollToSection={scrollToSection} />
-        <AboutSection />
-        <ExperienceSection />
-        <PortfolioSection />
-        <ContactSection />
-        <Footer />
-      </div>
+      <HeroSection scrollToSection={scrollToSection} />
+      <AboutSection />
+      <ExperienceSection />
+      <PortfolioSection />
+      <ContactSection />
+      <Footer />
       <ScrollToTop />
     </div>
   );

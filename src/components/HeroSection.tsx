@@ -15,7 +15,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
     link.click();
   };
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 lg:pt-0">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 lg:pt-24">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-hero opacity-10"></div>
       
