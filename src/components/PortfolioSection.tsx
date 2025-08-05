@@ -34,7 +34,6 @@ const projects = [
     image: isketcher,
     technologies: ["React", "TypeScript", "AI Integration", "Mermaid", "Tailwind CSS"],
     liveUrl: "https://isketcher.netlify.app/",
-    //githubUrl: "https://lovable.dev/projects/a178164e-2c25-4258-ab93-2372ce2927e0",
     featured: true
   },
   // {
