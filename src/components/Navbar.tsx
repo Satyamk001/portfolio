@@ -48,22 +48,37 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
               Satyam
             </motion.div>
 
-            {/* Desktop Navigation Items - Pill Style */}
-            <div className="hidden lg:flex items-center space-x-2 bg-secondary/50 backdrop-blur-sm rounded-full p-1 border border-border/50">
-              {navItems.map((item) => (
-                <Button
-                  key={item.id}
-                  variant="ghost"
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 lg:px-6 py-2 rounded-full transition-all duration-300 text-sm ${
-                    activeSection === item.id
-                      ? "bg-background text-foreground shadow-md"
-                      : "hover:bg-background/80 hover:text-foreground"
-                  }`}
-                >
-                  {item.label}
-                </Button>
-              ))}
+            {/* Desktop Navigation Items - Glass Style like Mobile */}
+            <div className="hidden lg:flex items-center space-x-2 bg-glass backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass px-2 py-3">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = activeSection === item.id;
+                
+                return (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`flex flex-col items-center space-y-1 p-2 rounded-xl transition-all duration-300 ${
+                      isActive ? "bg-primary/10" : ""
+                    }`}
+                    whileTap={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className={`p-2 rounded-full transition-all duration-300 ${
+                      isActive 
+                        ? "bg-primary text-primary-foreground shadow-lg scale-110" 
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}>
+                      {/* No icon for desktop - only text */}
+                    </div>
+                    <span className={`text-sm font-medium transition-colors duration-300 ${
+                      isActive ? "text-primary" : "text-muted-foreground"
+                    }`}>
+                      {item.label}
+                    </span>
+                  </motion.button>
+                );
+              })}
             </div>
 
             {/* Theme Toggle & CTA */}
@@ -193,14 +208,7 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
                 }`}>
                   <Icon className="w-5 h-5" />
                 </div>
-                <span className={`text-[10px] font-medium transition-colors duration-300 ${
-                  isActive ? "text-primary" : "text-muted-foreground"
-                }`}>
-                  {item.id === "home" ? "Home" : 
-                   item.id === "about" ? "About" : 
-                   item.id === "experience" ? "Exp" :
-                   item.id === "portfolio" ? "Work" : "Contact"}
-                </span>
+                {/* No text for mobile - only icons */}
               </motion.button>
             );
           })}
