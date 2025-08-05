@@ -48,34 +48,24 @@ export const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
               Satyam
             </motion.div>
 
-            {/* Desktop Navigation Items - Glass Style like Mobile */}
-            <div className="hidden lg:flex items-center space-x-2 bg-glass backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass px-2 py-3">
+            {/* Desktop Navigation Items - Clean Glass Style */}
+            <div className="hidden lg:flex items-center space-x-1 bg-glass backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass px-4 py-2">
               {navItems.map((item) => {
-                const Icon = item.icon;
                 const isActive = activeSection === item.id;
                 
                 return (
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex flex-col items-center space-y-1 p-2 rounded-xl transition-all duration-300 ${
-                      isActive ? "bg-primary/10" : ""
-                    }`}
-                    whileTap={{ scale: 1.1 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className={`p-2 rounded-full transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium ${
                       isActive 
-                        ? "bg-primary text-primary-foreground shadow-lg scale-110" 
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}>
-                      {/* No icon for desktop - only text */}
-                    </div>
-                    <span className={`text-sm font-medium transition-colors duration-300 ${
-                      isActive ? "text-primary" : "text-muted-foreground"
-                    }`}>
-                      {item.label}
-                    </span>
+                        ? "bg-primary text-primary-foreground shadow-lg" 
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/10"
+                    }`}
+                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    {item.label}
                   </motion.button>
                 );
               })}
