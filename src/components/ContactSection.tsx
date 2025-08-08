@@ -35,47 +35,56 @@ export const ContactSection = () => {
     email: "",
     message: ""
   });
+  const [webhookUrl, setWebhookUrl] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!webhookUrl) {
+      toast({
+        title: "Error",
+        description: "Please enter your Zapier webhook URL first",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch(webhookUrl, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        mode: "no-cors",
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          timestamp: new Date().toISOString(),
+          triggered_from: window.location.origin,
+        }),
       });
 
-      const result = await response.json();
-
-      if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
-        });
-        
-        setFormData({
-          name: '',
-          email: '',
-          message: ''
-        });
-      } else {
-        toast({
-          title: "Error",
-          description: result.error || "Failed to send message. Please try again.",
-          variant: "destructive",
-        });
-      }
+      // Since we're using no-cors, we won't get a proper response status
+      toast({
+        title: "Message Sent!",
+        description: "Your message was sent to Zapier. Check your Zap's history to confirm it was triggered.",
+      });
+      
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
     } catch (error) {
       console.error('Error sending message:', error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please check your connection and try again.",
+        description: "Failed to send message. Please check your webhook URL and try again.",
         variant: "destructive",
       });
     } finally {
@@ -205,6 +214,30 @@ export const ContactSection = () => {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Zapier Webhook URL Input */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    viewport={{ once: true }}
+                    className="space-y-2"
+                  >
+                    <Label htmlFor="webhookUrl">Zapier Webhook URL</Label>
+                    <Input
+                      id="webhookUrl"
+                      name="webhookUrl"
+                      type="url"
+                      value={webhookUrl}
+                      onChange={(e) => setWebhookUrl(e.target.value)}
+                      placeholder="https://hooks.zapier.com/hooks/catch/..."
+                      required
+                      className="transition-all duration-300 focus:shadow-card"
+                    />
+                    <p className="text-sm text-muted-foreground">
+                      Create a Zap with a webhook trigger and paste the URL here to receive emails automatically.
+                    </p>
+                  </motion.div>
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
