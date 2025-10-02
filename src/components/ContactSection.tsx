@@ -172,7 +172,7 @@ export const ContactSection = () => {
           >
             <Card className="shadow-elegant border-primary/10">
               <CardHeader>
-                <CardTitle className="text-2xl">Send me a message (Work in </CardTitle>
+                <CardTitle className="text-2xl">Send me a message (Work in Progress) </CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
