@@ -35,23 +35,61 @@ export const ContactSection = () => {
     email: "",
     message: ""
   });
+  const [webhookUrl, setWebhookUrl] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
     
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
+    if (!webhookUrl) {
+      toast({
+        title: "Error",
+        description: "Please enter your Zapier webhook URL first",
+        variant: "destructive",
+      });
+      return;
+    }
 
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          timestamp: new Date().toISOString(),
+          triggered_from: window.location.origin,
+        }),
+      });
+
+      // Since we're using no-cors, we won't get a proper response status
+      toast({
+        title: "Message Sent!",
+        description: "Your message was sent to Zapier. Check your Zap's history to confirm it was triggered.",
+      });
+      
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please check your webhook URL and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
