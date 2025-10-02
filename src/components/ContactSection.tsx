@@ -209,35 +209,9 @@ export const ContactSection = () => {
             className="lg:col-span-2"
           >
             <Card className="shadow-elegant border-primary/10">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send me a message (Work in progress)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Zapier Webhook URL Input */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                    viewport={{ once: true }}
-                    className="space-y-2"
-                  >
-                    <Label htmlFor="webhookUrl">Zapier Webhook URL</Label>
-                    <Input
-                      id="webhookUrl"
-                      name="webhookUrl"
-                      type="url"
-                      value={webhookUrl}
-                      onChange={(e) => setWebhookUrl(e.target.value)}
-                      placeholder="https://hooks.zapier.com/hooks/catch/..."
-                      required
-                      className="transition-all duration-300 focus:shadow-card"
-                    />
-                    <p className="text-sm text-muted-foreground">
-                      Create a Zap with a webhook trigger and paste the URL here to receive emails automatically.
-                    </p>
-                  </motion.div>
-
+              <CardHeader className="p-0"> Send a message (Work in progress)</CardHeader>
+              <CardContent className="p-0">
+                <form onSubmit={handleSubmit} className="space-y-6 p-0">
                   <div className="grid md:grid-cols-2 gap-6">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -272,64 +246,63 @@ export const ContactSection = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="your.email@example.com"
+                        placeholder="your-email@example.com"
                         required
                         className="transition-all duration-300 focus:shadow-card"
                       />
                     </motion.div>
-                  </div>
-                  
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.3 }}
-                    viewport={{ once: true }}
-                    className="space-y-2"
-                  >
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell me about your project or idea..."
-                      rows={6}
-                      required
-                      className="transition-all duration-300 focus:shadow-card resize-none"
-                    />
-                  </motion.div>
-                  
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
-                    <Button
-                      type="submit"
-                      size="lg"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-primary hover:opacity-90 transition-opacity shadow-elegant"
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.3 }}
+                      viewport={{ once: true }}
+                      className="space-y-2"
                     >
-                      {isSubmitting ? (
-                        <div className="flex items-center">
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                          Sending...
-                        </div>
-                      ) : (
-                        <>
-                          <Send className="w-4 h-4 mr-2" />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
-                  </motion.div>
-                </form>
+                      <Label htmlFor="message">Message</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell me about your project or idea..."
+                        rows={6}
+                        required
+                        className="transition-all duration-300 focus:shadow-card resize-none"
+                      />
+                    </motion.div>
+                    
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.4 }}
+                      viewport={{ once: true }}
+                    >
+                      <Button
+                        type="submit"
+                        size="lg"
+                        disabled={isSubmitting}
+                        className="w-full bg-gradient-primary hover:opacity-90 transition-opacity shadow-elegant"
+                      >
+                        {isSubmitting ? (
+                          <div className="flex items-center">
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                            Sending...
+                          </div>
+                        ) : (
+                          <>
+                            <Send className="w-4 h-4 mr-2" />
+                            Send Message
+                          </>
+                        )}
+                      </Button>
+                    </motion.div>
+                    </div>
+                  </form>
               </CardContent>
             </Card>
           </motion.div>
         </div>
-      </div>
+    </div>
     </section>
-  );
-};
+);
+}
