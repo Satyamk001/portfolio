@@ -68,7 +68,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-lg sm:text-xl md:text-2xl font-semibold text-muted-foreground"
           >
-            Full Stack & Mobile App Developer
+            Full Stack Developer
           </motion.h2>
 
           <motion.p
@@ -77,7 +77,8 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-md lg:max-w-lg leading-relaxed mx-auto lg:mx-0 px-2 sm:px-0"
           >
-            BTech in ECE with 6 months building scalable web applications, mobile apps, and backend systems. Expert in MERN stack, Angular, React Native, and cloud technologies.
+            Experienced in developing scalable web and mobile applications with robust backend systems. 
+            Proficient in MEAN stack, MERN stack, Nest js and MySql.
           </motion.p>
 
           <motion.div
