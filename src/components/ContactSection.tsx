@@ -128,7 +128,7 @@ export const ContactSection = () => {
                   </CardContent>
                 </Card>
               </motion.a>
-            ))}
+            ))} 
 
             {/* Availability Status */}
             <motion.div
