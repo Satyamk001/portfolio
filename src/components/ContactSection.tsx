@@ -166,7 +166,7 @@ export const ContactSection = () => {
                   </CardContent>
                 </Card>
               </motion.a>
-            ))}
+            ))} 
 
             {/* Availability Status */}
             <motion.div
@@ -210,7 +210,7 @@ export const ContactSection = () => {
           >
             <Card className="shadow-elegant border-primary/10">
               <CardHeader>
-                <CardTitle className="text-2xl">Send me a message</CardTitle>
+                <CardTitle className="text-2xl">Send me a message (Work in progress)</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">

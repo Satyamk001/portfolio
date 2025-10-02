@@ -29,7 +29,7 @@ const skills = [
 
 const stats = [
   { number: "10+", label: "Projects Completed" },
-  { number: "6 Months +", label: "Experience" },
+  { number: "9 Months +", label: "Experience" },
   { number: "600+", label: "LeetCode Problems" },
   { number: "7.9", label: "CGPA" }
 ];
@@ -47,9 +47,8 @@ export const AboutSection = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-4 sm:px-0">
-            I'm a passionate full-stack and mobile app developer with 6 months of experience creating 
-            innovative applications. Pursuing BTech in Electronics and Communication Engineering 
-            with 7.9 CGPA, I specialize in MERN stack, Angular, React Native, and backend development. 
+            I'm a passionate full-stack and mobile app developer with 9 months of experience creating 
+            innovative applications.I specialize in Angular, React, Node, Express , Nestjs, MySql and Mongodb. 
             I love turning complex problems into simple, scalable, and intuitive solutions.
           </p>
           
@@ -67,24 +66,22 @@ export const AboutSection = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
+           <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              My journey began with electronics engineering and evolved into full-stack development. 
-              I've gained hands-on experience through internships at Comely Enterprises and Digital Xperts, 
-              building scalable web applications, mobile apps, and robust backend systems using MERN stack 
-              and Angular frameworks.
+              My journey started with a degree in Electronics Engineering and has now evolved into full-stack development. 
+              I have gained hands-on experience building scalable web applications, mobile apps, and robust backend systems 
+              through internships at Comely Enterprises and Digital Guruji.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I specialize in full-stack development with React, Angular, Node.js, Express.js, MongoDB, 
-              and MySQL. My mobile development expertise includes React Native for cross-platform apps. 
-              I'm passionate about creating efficient REST APIs, implementing secure authentication, 
-              and building responsive, user-friendly interfaces.
+              Currently, I work as an Associate Software Engineer at MapmyIndia, specializing in full-stack development with 
+              Angular, React, Node.js, Express.js, NestJS, PostgreSQL, and MySQL. I am passionate about creating efficient REST APIs, 
+              implementing secure authentication, and building responsive, user-friendly interfaces.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Currently maintaining a 7.9 CGPA in BTech ECE while actively solving 600+ LeetCode problems. 
-              I enjoy working on challenging projects that combine technical excellence with innovative 
-              solutions, constantly learning new technologies to stay ahead in the rapidly evolving tech landscape.
+              I enjoy tackling challenging projects that combine technical excellence with innovative solutions, continuously 
+              learning new technologies, and staying ahead in the ever-evolving tech landscape.
             </p>
+
           </motion.div>
 
           {/* Stats Grid */}
