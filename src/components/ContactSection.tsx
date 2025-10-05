@@ -42,7 +42,7 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    axios.post("http://localhost:3000/sendMail", formData)
+    axios.post("https://protfolio-backend-0qxa.onrender.com/sendMail", formData)
     .then(res => {
       if(res.data.success){
         toast({
