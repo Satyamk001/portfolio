@@ -10,9 +10,11 @@ interface HeroSectionProps {
 export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = 'public/satyam_july_res.pdf'; 
+    link.href = '/Resume.pdf';  
     link.download = 'Satyam_Resume.pdf';
-    link.click();
+    document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
   };
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 lg:pt-24">
