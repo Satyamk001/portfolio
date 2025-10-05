@@ -280,7 +280,7 @@ export const ContactSection = () => {
                 </form>
               </CardContent>
             </Card>
-          </motion.div>
+          </motion.div> 
         </div>
       </div>
     </section>
