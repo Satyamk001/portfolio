@@ -48,12 +48,16 @@ export const ContactSection = () => {
         toast({
           title: "Message sent!",
           description: "Thank you for your message. I'll get back to you soon!",
+          duration: 2000,
+          variant: "default",
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
         toast({
           title: "Error",
           description: "Something went wrong. Please try again later.",
+          duration: 2000,
+          variant: "destructive"
         });
       }
     })
@@ -61,6 +65,8 @@ export const ContactSection = () => {
       toast({
         title: "Error",
         description: "Something went wrong. Please try again later.",
+        duration: 2000,
+        variant: "destructive"
       });
       console.error(err);
     })
