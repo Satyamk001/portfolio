@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-
+import axios from "axios";
 const contactInfo = [
   {
     icon: <Mail className="w-6 h-6" />,
@@ -42,16 +42,31 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
+    axios.post("http://localhost:3000/sendMail", formData)
+    .then(res => {
+      if(res.data.success){
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again later.",
+        });
+      }
+    })
+    .catch(err => {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+      });
+      console.error(err);
+    })
+    .finally(() => {
+      setIsSubmitting(false);
     });
-
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -172,7 +187,7 @@ export const ContactSection = () => {
           >
             <Card className="shadow-elegant border-primary/10">
               <CardHeader>
-                <CardTitle className="text-2xl">Send me a message (Work in Progress) </CardTitle>
+                <CardTitle className="text-2xl">Send me a message </CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
