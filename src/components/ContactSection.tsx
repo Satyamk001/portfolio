@@ -83,7 +83,7 @@ export const ContactSection = () => {
   };
 
   useEffect(()=>{
-    axios.get("https://protfolio-backend-0qxa.onrender.com/sendMail").then(()=>{
+    axios.get("https://protfolio-backend-0qxa.onrender.com/healthy").then(()=>{
      toast({
           title: "Server is up!",
           description: "Thank you for visiting my portfolio!. Kinldy share your thoughts through contact section",
@@ -99,7 +99,7 @@ export const ContactSection = () => {
         variant: "destructive"
       });
     }) 
-  });
+  },[formData]);
 
   return (
     <section id="contact" className="py-20 bg-gradient-secondary">
