@@ -82,6 +82,25 @@ export const ContactSection = () => {
     }));
   };
 
+  useEffect(()=>{
+    axios.get("https://protfolio-backend-0qxa.onrender.com/sendMail").then(()=>{
+     toast({
+          title: "Server is up!",
+          description: "Thank you for visiting my portfolio!. Kinldy share your thoughts through contact section",
+          duration: 2000,
+          variant: "default",
+        });
+    }).catch((err)=>{
+      console.log(err);
+       toast({
+        title: "Error",
+        description: "Backend is not live.",
+        duration: 2000,
+        variant: "destructive"
+      });
+    }) 
+  });
+
   return (
     <section id="contact" className="py-20 bg-gradient-secondary">
       <div className="container mx-auto px-6">
