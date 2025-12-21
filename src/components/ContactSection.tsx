@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 const contactInfo = [
@@ -81,6 +81,25 @@ export const ContactSection = () => {
       [e.target.name]: e.target.value
     }));
   };
+
+  useEffect(()=>{
+    axios.get("https://protfolio-backend-0qxa.onrender.com/health").then(()=>{
+     toast({
+          title: "Server is up!",
+          description: "Thank you for visiting my portfolio!. Kinldy share your thoughts through contact section",
+          duration: 2000,
+          variant: "default",
+        });
+    }).catch((err)=>{
+      console.log(err);
+       toast({
+        title: "Error",
+        description: "Backend is not live.",
+        duration: 2000,
+        variant: "destructive"
+      });
+    }) 
+  },[]);
 
   return (
     <section id="contact" className="py-20 bg-gradient-secondary">
