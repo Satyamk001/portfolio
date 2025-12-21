@@ -6,9 +6,20 @@ import { useRef } from "react";
 
 const experiences = [
   {
-    title: "Full Stack Developer Intern",
+    title: "Associate Software Developer",
+    company: "MapmyIndia",
+    duration: "July 2025 - Present",
+    description: [
+      "Followed best practices for security, code quality, and maintainability, including input validation, error handling, and modular architecture.",
+      "Optimized frontend and backend performance, achieving 40% faster page loads and fewer server errors.",
+      "Stored temporary data and queue tasks in Redis to offload workload from main database."
+    ],
+    technologies: ["Angular", "React", "Express.js", "Redis", "PostgreSQL", "Node.js"]
+  },
+  {
+    title: "Full Stack Developer",
     company: "Comely Enterprises Pvt. Ltd.",
-    duration: "Jan 2025 - May 2025",
+    duration: "Jan 2025 - June 2025",
     description: [
       "Built and maintained scalable cross-platform applications using Angular, AngularJS, React Native, Express.js, and MySQL",
       "Contributing to a 25% increase in development efficiency through modular code practices",
@@ -17,17 +28,6 @@ const experiences = [
     ],
     technologies: ["Angular", "AngularJS", "React Native", "Express.js", "MySQL", "Node.js"]
   },
-  {
-    title: "Backend Developer Intern",
-    company: "Digital Guruji",
-    duration: "June 2025 - June 2025",
-    description: [
-      "Developed and integrated an email warm-up feature using Node.js, MongoDB, NodeMailer transporter and cron scheduler",
-      "Implemented custom cron jobs to control email sending, volume controls and various management rules",
-      "Refactored and cleaned existing backend APIs for scalability, error handling, and maintainability"
-    ],
-    technologies: ["Node.js", "MongoDB", "NodeMailer", "Cron Jobs", "REST APIs"]
-  }
 ];
 
 const TimelineCard = ({ experience, index, totalCards }: { experience: typeof experiences[0], index: number, totalCards: number }) => {
