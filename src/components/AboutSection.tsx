@@ -27,9 +27,9 @@ const skills = [
   }
 ];
 
-const stats = [
-  { number: "10+", label: "Projects Completed" },
-  { number: "9 Months +", label: "Experience" },
+const stats = [ 
+  { number: "20+", label: "Projects Completed" },
+  { number: "1 Year +", label: "Experience" },
   { number: "600+", label: "LeetCode Problems" },
   { number: "7.9", label: "CGPA" }
 ];
