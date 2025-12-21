@@ -36,6 +36,16 @@ const projects = [
     liveUrl: "https://isketcher.netlify.app/",
     featured: true
   },
+  {
+    id: 4,
+    title: "Social Media Microservice",
+    description: "Developed a social media microservice using Node.js and MongoDB, enabling users to create profiles, post updates, follow others, and engage through likes and comments. Implemented RESTful APIs for seamless integration with larger applications.",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop",
+    technologies: ["Node.js", "MongoDB", "Express.js", "REST APIs"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/Satyamk001/social-media-microservices",
+    featured: false
+  }
   // {
   //   id: 3,
   //   title: "User Authentication & Role-based Access",

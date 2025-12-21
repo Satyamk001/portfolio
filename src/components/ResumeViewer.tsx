@@ -60,23 +60,24 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-200 pb-2">Experience</h2>
                 <div className="space-y-6">
+                  
                   <div>
+                    <h3 className="text-xl font-semibold text-gray-900">Associate Software Developer</h3>
+                    <p className="text-gray-600 mb-2">MapmyIndia | Present</p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-1">
+                      <li>Developed responsive web applications using React and Angular</li>
+                      <li>Followed best practices for security, code quality, and maintainability, including input validation, error handling, and modular architecture.</li>
+                      <li>Integrated RESTful APIs and managed state with Redux, Rxjs</li>
+                      <li>Optimized frontend and backend performance, achieving 40% faster page loads and fewer server errors.</li>
+                    </ul>
+                  </div>
+                   <div>
                     <h3 className="text-xl font-semibold text-gray-900">Full Stack Developer</h3>
-                    <p className="text-gray-600 mb-2">Comely Enterprises Pvt. Ltd. | 5 Months</p>
+                    <p className="text-gray-600 mb-2">Comely Enterprises Pvt. Ltd. | 6 Months</p>
                     <ul className="list-disc list-inside text-gray-700 space-y-1">
                       <li>Led development of scalable web applications using React, Node.js, and PostgreSQL</li>
                       <li>Improved application performance by 40% through code optimization and caching strategies</li>
-                      <li>Mentored junior developers and conducted code reviews</li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">Backend Developer</h3>
-                    <p className="text-gray-600 mb-2">Digital Guruji | 1 Months</p>
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Developed responsive web applications using React and TypeScript</li>
-                      <li>Collaborated with design team to implement pixel-perfect UI/UX</li>
-                      <li>Integrated RESTful APIs and managed state with Redux</li>
+                      <li>Contributing to a 25% increase in development efficiency through modular code practices</li>
                     </ul>
                   </div>
                 </div>
