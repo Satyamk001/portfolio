@@ -165,7 +165,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               className="absolute -bottom-6 -right-6 bg-card border border-border rounded-2xl p-4 shadow-card"
             >
               <div className="text-center">
-                <div className="text-lg sm:text-xl font-bold text-primary">9 Months+</div>
+                <div className="text-lg sm:text-xl font-bold text-primary">1 Year+</div>
                 <div className="text-xs text-muted-foreground">Experience</div>
               </div>
             </motion.div>
