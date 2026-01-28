@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 const contactInfo = [
@@ -42,37 +42,37 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    axios.post("https://protfolio-backend-0qxa.onrender.com/sendMail", formData)
-    .then(res => {
-      if(res.data.success){
-        toast({
-          title: "Message sent!",
-          description: "Thank you for your message. I'll get back to you soon!",
-          duration: 2000,
-          variant: "default",
-        });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
+    axios.post("https://all-backend-render.onrender.com/portfolio/sendMail", formData)
+      .then(res => {
+        if (res.data.success) {
+          toast({
+            title: "Message sent!",
+            description: "Thank you for your message. I'll get back to you soon!",
+            duration: 2000,
+            variant: "default",
+          });
+          setFormData({ name: "", email: "", message: "" });
+        } else {
+          toast({
+            title: "Error",
+            description: "Something went wrong. Please try again later.",
+            duration: 2000,
+            variant: "destructive"
+          });
+        }
+      })
+      .catch(err => {
         toast({
           title: "Error",
           description: "Something went wrong. Please try again later.",
           duration: 2000,
           variant: "destructive"
         });
-      }
-    })
-    .catch(err => {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again later.",
-        duration: 2000,
-        variant: "destructive"
+        console.error(err);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      console.error(err);
-    })
-    .finally(() => {
-      setIsSubmitting(false);
-    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -82,24 +82,24 @@ export const ContactSection = () => {
     }));
   };
 
-  useEffect(()=>{
-    axios.get("https://protfolio-backend-0qxa.onrender.com/health").then(()=>{
-     toast({
-          title: "Server is up!",
-          description: "Thank you for visiting my portfolio!. Kinldy share your thoughts through contact section",
-          duration: 2000,
-          variant: "default",
-        });
-    }).catch((err)=>{
+  useEffect(() => {
+    axios.get("https://all-backend-render.onrender.com/health").then(() => {
+      toast({
+        title: "Server is up!",
+        description: "Thank you for visiting my portfolio!. Kinldy share your thoughts through contact section",
+        duration: 2000,
+        variant: "default",
+      });
+    }).catch((err) => {
       console.log(err);
-       toast({
+      toast({
         title: "Error",
         description: "Backend is not live.",
         duration: 2000,
         variant: "destructive"
       });
-    }) 
-  },[]);
+    })
+  }, []);
 
   return (
     <section id="contact" className="py-20 bg-gradient-secondary">
@@ -113,7 +113,7 @@ export const ContactSection = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you. 
+            Have a project in mind or want to collaborate? I'd love to hear from you.
             Let's create something amazing together!
           </p>
         </motion.div>
@@ -128,23 +128,23 @@ export const ContactSection = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
-            
+
             {contactInfo.map((info, index) => (
               <motion.a
                 key={index}
                 href={info.action}
                 initial={{ opacity: 0, x: -50, scale: 0.9 }}
                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: index * 0.15,
                   ease: [0.25, 0.46, 0.45, 0.94]
                 }}
                 viewport={{ once: true, margin: "-50px" }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   x: 8,
-                  transition: { 
+                  transition: {
                     type: "spring",
                     stiffness: 400,
                     damping: 25
@@ -174,8 +174,8 @@ export const ContactSection = () => {
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: 0.4,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
@@ -183,7 +183,7 @@ export const ContactSection = () => {
               whileHover={{
                 scale: 1.02,
                 y: -4,
-                transition: { 
+                transition: {
                   type: "spring",
                   stiffness: 300,
                   damping: 25
@@ -196,7 +196,7 @@ export const ContactSection = () => {
                 <span className="font-semibold">Available for Projects</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm currently available for freelance projects and full-time opportunities. 
+                I'm currently available for freelance projects and full-time opportunities.
                 Let's discuss how I can help bring your ideas to life!
               </p>
             </motion.div>
@@ -235,7 +235,7 @@ export const ContactSection = () => {
                         className="transition-all duration-300 focus:shadow-card"
                       />
                     </motion.div>
-                    
+
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -256,7 +256,7 @@ export const ContactSection = () => {
                       />
                     </motion.div>
                   </div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -276,7 +276,7 @@ export const ContactSection = () => {
                       className="transition-all duration-300 focus:shadow-card resize-none"
                     />
                   </motion.div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -305,7 +305,7 @@ export const ContactSection = () => {
                 </form>
               </CardContent>
             </Card>
-          </motion.div> 
+          </motion.div>
         </div>
       </div>
     </section>
