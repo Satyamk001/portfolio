@@ -10,17 +10,17 @@ interface HeroSectionProps {
 export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Resume.pdf';  
+    link.href = '/Resume.pdf';
     link.download = 'Satyam_Resume.pdf';
     document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 lg:pt-24">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-hero opacity-10"></div>
-      
+
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -79,7 +79,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-md lg:max-w-lg leading-relaxed mx-auto lg:mx-0 px-2 sm:px-0"
           >
-            Experienced in developing scalable web and mobile applications with robust backend systems. 
+            Experienced in developing scalable web and mobile applications with robust backend systems.
             Proficient in MEAN stack, MERN stack, Nest js and MySql.
           </motion.p>
 
@@ -97,7 +97,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               <ExternalLink className="w-4 h-4 mr-2" />
               My Works
             </Button>
-            
+
             <Button
               size="lg"
               variant="outline"
@@ -118,7 +118,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           >
             <p className="text-sm text-muted-foreground mb-3">Specialization:</p>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-              {["React", "Angular", "Node.js", "React Native", "MongoDB", "MySQL", "Express.js", "REST APIs"].map((tech, index) => (
+              {["React", "Angular", "Node.js", "MongoDB", "MySQL", "Express.js", "Redis", "Kafka", "AWS", "Docker", "Nest js", "Next js"].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -145,7 +145,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             className="absolute -inset-4 bg-gradient-primary rounded-full opacity-20 blur-2xl"
           />
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -156,7 +156,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
               alt="Satyam Kumar"
               className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl object-cover shadow-elegant border-2 border-primary/20"
             />
-            
+
             {/* Floating Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0 }}

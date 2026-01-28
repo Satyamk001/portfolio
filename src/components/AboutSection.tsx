@@ -13,7 +13,7 @@ const skills = [
   {
     category: "Backend",
     icon: <Database className="w-6 h-6" />,
-    technologies: ["Node.js", "Express.js", "MongoDB", "MySQL", "RESTful APIs", "JWT", "Mongoose", "Bcrypt"]
+    technologies: ["Node.js", "Express.js", "Nest js", "MongoDB", "MySQL", "RESTful APIs", "JWT", "Mongoose", "Redis", "Kafka"]
   },
   {
     category: "Mobile",
@@ -23,11 +23,11 @@ const skills = [
   {
     category: "Cloud & Tools",
     icon: <Cloud className="w-6 h-6" />,
-    technologies: ["Git", "GitHub", "VS Code", "Postman", "npm", "Firebase", "Deployment"]
+    technologies: ["Git", "GitHub", "Docker", "AWS", "VS Code", "Postman", "npm", "Firebase", "Deployment"]
   }
 ];
 
-const stats = [ 
+const stats = [
   { number: "20+", label: "Projects Completed" },
   { number: "1 Year+", label: "Experience" },
   { number: "600+", label: "LeetCode Problems" },
@@ -47,11 +47,11 @@ export const AboutSection = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-4 sm:px-0">
-            I'm a passionate full-stack and mobile app developer with 9 months of experience creating 
-            innovative applications.I specialize in Angular, React, Node, Express , Nestjs, MySql and Mongodb. 
+            I'm a passionate full-stack and mobile app developer with 9 months of experience creating
+            innovative applications.I specialize in Angular, React, Node, Express , Nestjs, MySql and Mongodb.
             I love turning complex problems into simple, scalable, and intuitive solutions.
           </p>
-          
+
           <div className="flex justify-center">
             <ResumeButton />
           </div>
@@ -66,19 +66,19 @@ export const AboutSection = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-           <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
+            <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              My journey started with a degree in Electronics Engineering and has now evolved into full-stack development. 
-              I have gained hands-on experience building scalable web applications, mobile apps, and robust backend systems 
+              My journey started with a degree in Electronics Engineering and has now evolved into full-stack development.
+              I have gained hands-on experience building scalable web applications, mobile apps, and robust backend systems
               through internships at Comely Enterprises and Digital Guruji.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Currently, I work as an Associate Software Engineer at MapmyIndia, specializing in full-stack development with 
-              Angular, React, Node.js, Express.js, NestJS, PostgreSQL, and MySQL. I am passionate about creating efficient REST APIs, 
+              Currently, I work as an Associate Software Engineer at MapmyIndia, specializing in full-stack development with
+              Angular, React, Node.js, Express.js, NestJS, PostgreSQL, and MySQL. I am passionate about creating efficient REST APIs,
               implementing secure authentication, and building responsive, user-friendly interfaces.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I enjoy tackling challenging projects that combine technical excellence with innovative solutions, continuously 
+              I enjoy tackling challenging projects that combine technical excellence with innovative solutions, continuously
               learning new technologies, and staying ahead in the ever-evolving tech landscape.
             </p>
 
@@ -97,16 +97,16 @@ export const AboutSection = () => {
                 key={index}
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: index * 0.1,
                   ease: [0.25, 0.46, 0.45, 0.94]
                 }}
                 viewport={{ once: true, margin: "-50px" }}
-                whileHover={{ 
-                  y: -8, 
+                whileHover={{
+                  y: -8,
                   scale: 1.02,
-                  transition: { 
+                  transition: {
                     type: "spring",
                     stiffness: 400,
                     damping: 25
@@ -138,26 +138,26 @@ export const AboutSection = () => {
             {skills.map((skill, index) => (
               <div key={index} className="relative">
                 <motion.div
-                  initial={{ 
-                    opacity: 0, 
+                  initial={{
+                    opacity: 0,
                     y: 60,
                     scale: 0.9
                   }}
-                  whileInView={{ 
-                    opacity: 1, 
+                  whileInView={{
+                    opacity: 1,
                     y: 0,
                     scale: 1
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 0.7,
                     delay: index * 0.1,
                     ease: [0.25, 0.46, 0.45, 0.94]
                   }}
                   viewport={{ once: true, margin: "-100px" }}
-                  whileHover={{ 
+                  whileHover={{
                     y: -8,
                     scale: 1.03,
-                    transition: { 
+                    transition: {
                       type: "spring",
                       stiffness: 400,
                       damping: 25
