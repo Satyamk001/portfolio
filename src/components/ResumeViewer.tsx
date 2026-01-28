@@ -41,7 +41,7 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
             </Button> */}
           </div>
         </DialogHeader>
-        
+
         <div className="max-h-[75vh] overflow-y-scroll">
           {/* Resume Content - Replace with actual resume */}
           <div className="bg-white text-black p-4 sm:p-6 lg:p-8 rounded-lg shadow-inner min-h-[400px] sm:min-h-[600px] lg:min-h-[800px]">
@@ -60,7 +60,7 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-200 pb-2">Experience</h2>
                 <div className="space-y-6">
-                  
+
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900">Associate Software Developer</h3>
                     <p className="text-gray-600 mb-2">MapmyIndia | Present</p>
@@ -71,7 +71,7 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
                       <li>Optimized frontend and backend performance, achieving 40% faster page loads and fewer server errors.</li>
                     </ul>
                   </div>
-                   <div>
+                  <div>
                     <h3 className="text-xl font-semibold text-gray-900">Full Stack Developer</h3>
                     <p className="text-gray-600 mb-2">Comely Enterprises Pvt. Ltd. | 6 Months</p>
                     <ul className="list-disc list-inside text-gray-700 space-y-1">
@@ -92,6 +92,7 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
                       <li>Angular</li>
                       <li>React.js</li>
                       <li>Angular.js</li>
+                      <li>Next.js</li>
                       <li>HTML/CSS</li>
                     </ul>
                   </div>
@@ -102,6 +103,11 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
                       <li>Express.js</li>
                       <li>PostgreSQL</li>
                       <li>MongoDB</li>
+                      <li>Redis</li>
+                      <li>Kafka</li>
+                      <li>AWS</li>
+                      <li>Docker</li>
+                      <li>Nest js</li>
                     </ul>
                   </div>
                   <div>
@@ -110,6 +116,7 @@ export const ResumeViewer = ({ isOpen, onClose }: ResumeViewerProps) => {
                       <li>Git</li>
                       <li>Docker</li>
                       <li>AWS</li>
+                      <li>Render</li>
                       <li>Vercel</li>
                     </ul>
                   </div>
@@ -150,10 +157,10 @@ export const ResumeButton = () => {
           View Resume
         </Button>
       </motion.div>
-      
-      <ResumeViewer 
-        isOpen={isResumeOpen} 
-        onClose={() => setIsResumeOpen(false)} 
+
+      <ResumeViewer
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
       />
     </>
   );

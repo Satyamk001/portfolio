@@ -14,7 +14,7 @@ const experiences = [
       "Optimized frontend and backend performance, achieving 40% faster page loads and fewer server errors.",
       "Stored temporary data and queue tasks in Redis to offload workload from main database."
     ],
-    technologies: ["Angular", "React", "Express.js", "Redis", "PostgreSQL", "Node.js"]
+    technologies: ["Angular", "React", "Express.js", "Redis", "Docker", "PostgreSQL", "Node.js", "Nest js"]
   },
   {
     title: "Full Stack Developer",
@@ -26,13 +26,13 @@ const experiences = [
       "Engineered and deployed secure RESTful APIs with Express.js and Node.js, reducing response time by 30%",
       "Drove performance optimization efforts on both frontend and backend, leading to a 40% improvement in page load speed"
     ],
-    technologies: ["Angular", "AngularJS", "React Native", "Express.js", "MySQL", "Node.js"]
+    technologies: ["Angular", "AngularJS", "React Native", "Express.js", "MySQL", "Node.js", "Docker", "AWS"]
   },
 ];
 
 const TimelineCard = ({ experience, index, totalCards }: { experience: typeof experiences[0], index: number, totalCards: number }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { 
+  const isInView = useInView(ref, {
     once: false,
     margin: "0px 0px -200px 0px"
   });
@@ -44,9 +44,9 @@ const TimelineCard = ({ experience, index, totalCards }: { experience: typeof ex
     <div className="relative">
       {/* Timeline Line */}
       <div className="absolute left-1/2 top-0 w-0.5 h-full bg-gradient-to-b from-primary/60 via-primary/40 to-primary/20 transform -translate-x-1/2 hidden lg:block" />
-      
+
       {/* Timeline Node */}
-      <motion.div 
+      <motion.div
         className="absolute left-1/2 top-8 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg transform -translate-x-1/2 z-10 hidden lg:block"
         initial={{ scale: 0 }}
         animate={isInView ? { scale: 1 } : { scale: 0 }}
@@ -56,35 +56,34 @@ const TimelineCard = ({ experience, index, totalCards }: { experience: typeof ex
       {/* Card Container */}
       <motion.div
         ref={ref}
-        initial={{ 
-          opacity: 0, 
+        initial={{
+          opacity: 0,
           y: 100,
           x: isEven ? -100 : 100,
           scale: 0.8
         }}
-        animate={isInView ? { 
-          opacity: 1, 
+        animate={isInView ? {
+          opacity: 1,
           y: 0,
           x: 0,
           scale: 1
         } : {
-          opacity: 0, 
+          opacity: 0,
           y: 100,
           x: isEven ? -100 : 100,
           scale: 0.8
         }}
-        transition={{ 
-          duration: 0.8, 
+        transition={{
+          duration: 0.8,
           ease: [0.25, 0.25, 0, 1],
           delay: 0.1
         }}
         className={`relative w-full lg:w-1/2 ${isEven ? 'lg:pr-8' : 'lg:pl-8 lg:ml-auto'} mb-8 sm:mb-12 lg:mb-32`}
       >
         {/* Connection Line to Timeline */}
-        <motion.div 
-          className={`absolute top-8 w-8 h-0.5 bg-gradient-to-r from-primary/60 to-primary hidden lg:block ${
-            isEven ? 'right-0' : 'left-0'
-          }`}
+        <motion.div
+          className={`absolute top-8 w-8 h-0.5 bg-gradient-to-r from-primary/60 to-primary hidden lg:block ${isEven ? 'right-0' : 'left-0'
+            }`}
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -94,7 +93,7 @@ const TimelineCard = ({ experience, index, totalCards }: { experience: typeof ex
         <Card className="relative overflow-hidden hover:shadow-elegant transition-all duration-500 border-primary/20 hover:border-primary/40 group">
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          
+
           <CardHeader className="bg-gradient-secondary relative z-10">
             <div className="flex flex-col gap-4">
               <div>
@@ -111,11 +110,11 @@ const TimelineCard = ({ experience, index, totalCards }: { experience: typeof ex
                   <Calendar className="h-4 w-4" />
                   <span>{experience.duration}</span>
                 </div>
-                
+
               </div>
             </div>
           </CardHeader>
-          
+
           <CardContent className="p-6 relative z-10">
             <ul className="space-y-3 mb-6">
               {experience.description.map((item, itemIndex) => (
@@ -131,7 +130,7 @@ const TimelineCard = ({ experience, index, totalCards }: { experience: typeof ex
                 </motion.li>
               ))}
             </ul>
-            
+
             <div className="flex flex-wrap gap-2">
               {experience.technologies.map((tech, techIndex) => (
                 <motion.div
@@ -158,7 +157,7 @@ export const ExperienceSection = () => {
     <section id="experience" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      
+
       <div className="container mx-auto max-w-7xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -178,10 +177,10 @@ export const ExperienceSection = () => {
         {/* Timeline Container */}
         <div className="relative">
           {experiences.map((experience, index) => (
-            <TimelineCard 
-              key={index} 
-              experience={experience} 
-              index={index} 
+            <TimelineCard
+              key={index}
+              experience={experience}
+              index={index}
               totalCards={experiences.length}
             />
           ))}
