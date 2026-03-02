@@ -43,14 +43,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           transition={{ duration: 0.8 }}
           className="space-y-4 sm:space-y-6 text-center lg:text-left"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-sm font-medium text-muted-foreground tracking-wider uppercase"
-          >
-            ✨ Let's meet!
-          </motion.div>
+    
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
