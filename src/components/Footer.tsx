@@ -6,7 +6,7 @@ const socialLinks = [
   { icon: <Github className="w-5 h-5" />, href: "https://github.com/satyamk001", label: "GitHub" },
   { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/satyamk001/", label: "LinkedIn" },
   { icon: <Code className="w-5 h-5" />, href: "https://leetcode.com/Satyamk001/", label: "Leetcode" },
-  { icon: <Mail className="w-5 h-5" />, href: "mailto:satyamkmr37@developer.com", label: "Email" },
+  { icon: <Mail className="w-5 h-5" />, href: "mailto:satyamkmr37@gmail.com", label: "Email" },
 ];
 
 const quickLinks = [

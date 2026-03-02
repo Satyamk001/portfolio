@@ -6,24 +6,24 @@ import { ResumeButton } from "@/components/ResumeViewer";
 
 const skills = [
   {
-    category: "Frontend",
+    category: "Languages & Frontend",
     icon: <Code className="w-6 h-6" />,
-    technologies: ["React", "Angular", "AngularJS", "HTML5", "CSS3", "JavaScript", "TypeScript", "Bootstrap"]
+    technologies: ["C++", "JavaScript", "TypeScript", "SQL", "HTML", "CSS", "Angular", "React.js", "Next.js"]
   },
   {
     category: "Backend",
     icon: <Database className="w-6 h-6" />,
-    technologies: ["Node.js", "Express.js", "Nest js", "MongoDB", "MySQL", "RESTful APIs", "JWT", "Mongoose", "Redis", "Kafka"]
+    technologies: ["Node.js", "Express.js", "NestJS", "Socket.IO", "WebRTC"]
   },
   {
-    category: "Mobile",
-    icon: <Smartphone className="w-6 h-6" />,
-    technologies: ["React Native", "Cross-platform", "iOS", "Android", "Firebase", "Expo"]
+    category: "Databases",
+    icon: <Database className="w-6 h-6" />,
+    technologies: ["MySQL", "MongoDB", "PostgreSQL", "Redis"]
   },
   {
-    category: "Cloud & Tools",
+    category: "Tools / Other",
     icon: <Cloud className="w-6 h-6" />,
-    technologies: ["Git", "GitHub", "Docker", "AWS", "VS Code", "Postman", "npm", "Firebase", "Deployment"]
+    technologies: ["Git", "Apache Kafka", "Docker", "CI/CD", "Razorpay"]
   }
 ];
 
@@ -47,8 +47,8 @@ export const AboutSection = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8 px-4 sm:px-0">
-            I'm a passionate full-stack and mobile app developer with 9 months of experience creating
-            innovative applications.I specialize in Angular, React, Node, Express , Nestjs, MySql and Mongodb.
+            I'm a passionate full-stack developer and Associate Software Developer at MapmyIndia. 
+            I specialize in building scalable web and mobile applications using Angular, React, Next.js, Node.js, and NestJS. 
             I love turning complex problems into simple, scalable, and intuitive solutions.
           </p>
 

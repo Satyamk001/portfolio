@@ -10,28 +10,26 @@ import chatapp from "@/assets/chat-app.png";
 const projects = [
   {
     id: 1,
-    title: "Rozgars - Job Portal Platform",
-    description: "A full-stack job portal website that connects candidates with employers. Developed using Angular, AngularJS, React Native, Express.js, and MySQL with secure user authentication and role-based access for job seekers and employers.",
+    title: "Rozgars - Full-Stack Job Portal",
+    description: "Built a full-stack job portal with JWT-based authentication, RBAC, and RESTful APIs serving candidates, employers, and admins. Developed a responsive front-end and integrated Razorpay for secure payments.",
     image: rozgars,
-    technologies: ["Angular", "Node.js", "MySQL", "Express.js", "JWT"],
+    technologies: ["Angular", "Node.js", "MySQL", "Redis", "AWS", "Razorpay"],
     liveUrl: "https://www.rozgars.com/",
-    //githubUrl: "https://www.rozgars.com/",
     featured: true
   },
   {
     id: 2,
     title: "Fitness: Multi-Gym Management System",
-    description: "A scalable web application for multi-gym operations built with Angular, Node.js, and MySQL. Features include attendance tracking, salary calculation, membership plan purchases, and flexible installment-based payment options.",
+    description: "A scalable web application for multi-gym operations built with Angular, Node.js, and MySQL. Features include attendance tracking, salary calculation, and installment-based payment options.",
     image: fitnest,
-    technologies: ["Angular", "Node.js", "MySQL", "Express.js", "Payment Gateway"],
+    technologies: ["Angular", "Node.js", "MySQL", "Express.js"],
     liveUrl: "hosted on IIS server",
-    //githubUrl: "#",
     featured: true
   },
   {
     id: 3,
     title: "AI Diagram Creator - Mermaid Sketcher",
-    description: "An intelligent diagram creation tool that combines Mermaid syntax with AI assistance. Features real-time diagram generation, AI-powered prompts for creating flowcharts, and export functionality with clean, intuitive interface.",
+    description: "An intelligent diagram creation tool that combines Mermaid syntax with AI assistance. Features real-time diagram generation and AI-powered prompts for creating flowcharts.",
     image: isketcher,
     technologies: ["React", "TypeScript", "AI Integration", "Mermaid", "Tailwind CSS"],
     liveUrl: "https://isketcher.netlify.app/",
@@ -40,7 +38,7 @@ const projects = [
   {
     id: 4,
     title: "Social Media Microservice",
-    description: "Developed a social media microservice using Node.js and MongoDB, enabling users to create profiles, post updates, follow others, and engage through likes and comments. Implemented RESTful APIs for seamless integration with larger applications.",
+    description: "Developed a social media microservice using Node.js and MongoDB, enabling users to create profiles, post updates, and engage through likes and comments.",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop",
     technologies: ["Node.js", "MongoDB", "Express.js", "REST APIs"],
     liveUrl: "#",
@@ -48,12 +46,11 @@ const projects = [
     featured: false
   },
   {
-    // chat feature and thread (meta) like feature to connect and interact with users
     id: 5,
-    title: "KUKU FUN",
-    description: "Chat application for connecting and interacting with users",
+    title: "KuKu Fun - Real-Time Chat Application",
+    description: "Built a scalable real-time chat system using Socket.IO with a Redis adapter. Integrated Apache Kafka for asynchronous event processing and implemented rate limiting and caching.",
     image: chatapp,
-    technologies: ["Node.js", "Next.js", "Express.js", "WebSocket", "PostgreSQL", "Tailwind CSS", "Socket.io", "Redis"],
+    technologies: ["Next.js", "Node.js", "Socket.IO", "PostgreSQL", "Redis", "Kafka", "Clerk"],
     liveUrl: "https://kuku-fun.vercel.app/",
     githubUrl: "https://github.com/Satyamk001/kuku_fun",
     featured: true

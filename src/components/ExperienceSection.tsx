@@ -10,23 +10,22 @@ const experiences = [
     company: "MapmyIndia",
     duration: "July 2025 - Present",
     description: [
-      "Followed best practices for security, code quality, and maintainability, including input validation, error handling, and modular architecture.",
-      "Optimized frontend and backend performance, achieving 40% faster page loads and fewer server errors.",
-      "Stored temporary data and queue tasks in Redis to offload workload from main database."
+      "Applied security best practices including input validation, error handling, and modular architecture to improve code quality and maintainability.",
+      "Optimized frontend and backend pipelines, achieving 40% faster page loads and reducing server error rates.",
+      "Implemented Redis for temporary data storage and task queuing, offloading workload from the main database and improving system responsiveness."
     ],
-    technologies: ["Angular", "React", "Express.js", "Redis", "Docker", "PostgreSQL", "Node.js", "Nest js"]
+    technologies: ["Angular", "React", "Next.js", "Node.js", "Express.js", "NestJS", "Redis", "Docker", "PostgreSQL"]
   },
   {
-    title: "Full Stack Developer",
+    title: "Full Stack Developer Intern",
     company: "Comely Enterprises Pvt. Ltd.",
-    duration: "Jan 2025 - June 2025",
+    duration: "Jan 2025 - May 2025",
     description: [
-      "Built and maintained scalable cross-platform applications using Angular, AngularJS, React Native, Express.js, and MySQL",
-      "Contributing to a 25% increase in development efficiency through modular code practices",
-      "Engineered and deployed secure RESTful APIs with Express.js and Node.js, reducing response time by 30%",
-      "Drove performance optimization efforts on both frontend and backend, leading to a 40% improvement in page load speed"
+      "Built and maintained scalable cross-platform applications using Angular, AngularJS, React Native, Express.js, and Redis, and MySQL; improved development efficiency by 25% through modular, reusable code.",
+      "Designed and deployed secure RESTful APIs with Node.js and Express.js, reducing response times by 30% and ensuring high reliability under concurrent load.",
+      "Applied Redis caching strategies and asynchronous processing to enhance system scalability and responsiveness."
     ],
-    technologies: ["Angular", "AngularJS", "React Native", "Express.js", "MySQL", "Node.js", "Docker", "AWS"]
+    technologies: ["Angular", "AngularJS", "React Native", "Node.js", "Express.js", "Redis", "MySQL"]
   },
 ];
 

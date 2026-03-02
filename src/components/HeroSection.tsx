@@ -80,7 +80,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-md lg:max-w-lg leading-relaxed mx-auto lg:mx-0 px-2 sm:px-0"
           >
             Experienced in developing scalable web and mobile applications with robust backend systems.
-            Proficient in MEAN stack, MERN stack, Nest js and MySql.
+            Proficient in React, Angular, Next.js, Node.js, and NestJS.
           </motion.p>
 
           <motion.div
@@ -118,7 +118,7 @@ export const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           >
             <p className="text-sm text-muted-foreground mb-3">Specialization:</p>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-              {["React", "Angular", "Node.js", "MongoDB", "MySQL", "Express.js", "Redis", "Kafka", "AWS", "Docker", "Nest js", "Next js"].map((tech, index) => (
+              {["React", "Angular", "Next.js", "Node.js", "Express.js", "NestJS", "MySQL", "PostgreSQL", "MongoDB", "Redis", "Apache Kafka", "Docker", "Socket.IO", "WebRTC"].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.8 }}
