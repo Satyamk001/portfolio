@@ -83,7 +83,7 @@ export const ContactSection = () => {
   };
 
   useEffect(() => {
-    axios.get("https://all-backend-render.onrender.com/health").then(() => {
+    axios.get("https://all-backend-render.onrender.com/portfolio/health").then(() => {
       toast({
         title: "Server is up!",
         description: "Thank you for visiting my portfolio!. Kinldy share your thoughts through contact section",
